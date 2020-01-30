@@ -1,0 +1,15 @@
+header{
+  padding-top: space(8);
+  color: #fff;
+  & .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@include down(678){
+  header{
+    padding-top: space(4);
+  }
+}
