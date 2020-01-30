@@ -1,0 +1,11 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" width="200" height="117" viewBox="0 0 200 117">
+  <rect id="Rectangle_52" data-name="Rectangle 52" width="89" height="26" transform="translate(0 2)" fill="#ff4848"/>
+  <rect id="Rectangle_58" data-name="Rectangle 58" width="89" height="26" transform="translate(111 87)" fill="#ff4848"/>
+  <g id="Logo-2" data-name="Logo" transform="translate(-85 -189)">
+    <text id="Trip" transform="translate(166 243)" fill="#fff" font-size="56" font-family="Montserrat-Bold, Montserrat" font-weight="700" letter-spacing="-0.01em"><tspan x="-66.724" y="0">TRIP</tspan></text>
+    <text id="way" transform="translate(206 292)" fill="#fff" font-size="56" font-family="Montserrat-Bold, Montserrat" font-weight="700" letter-spacing="-0.01em"><tspan x="-70.112" y="0">WAY</tspan></text>
+    <path id="Icon_awesome-telegram-plane" data-name="Icon awesome-telegram-plane" d="M31.409,6.933,26.655,29.348c-.359,1.582-1.294,1.976-2.623,1.23l-7.242-5.337L13.3,28.6a1.819,1.819,0,0,1-1.455.71l.52-7.376L25.784,9.809c.584-.52-.127-.809-.907-.288L8.283,19.969,1.139,17.733c-1.554-.485-1.582-1.554.323-2.3L29.4,4.669c1.294-.485,2.426.288,2,2.264Z" transform="translate(239.999 205.472)" fill="#fff"/>
+    <path id="Tracé_661" data-name="Tracé 661" d="M-320.952,256.365s-39.86.544-21.889,23.988c.342.064,6.054,3.259,6.7,3.349,18.924,2.7,17.677-25.082-13.318-27.337" transform="translate(450 -2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" stroke-dasharray="4 6"/>
+    <path id="Tracé_662" data-name="Tracé 662" d="M-314,253.928s-1.228,11.36-28.071,10.7" transform="translate(560 -18)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" stroke-dasharray="4 6"/>
+  </g>
+</svg>

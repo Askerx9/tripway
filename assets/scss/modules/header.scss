@@ -1,15 +1,12 @@
 header{
-  padding-top: space(8);
-  color: #fff;
+  width: 100%;
+  position: fixed;
+  top: space(4);
+  z-index: 5;
+
   & .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-}
-
-@include down(678){
-  header{
-    padding-top: space(4);
   }
 }

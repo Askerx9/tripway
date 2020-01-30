@@ -1,0 +1,27 @@
+// Variables
+// ==================
+$color: #FF4848;
+
+// Mixins
+// ==================
+%btn-shadow{
+  box-shadow: 0 3px 49px rgba($color, .8);
+  transition: box-shadow .15s ease-in-out;
+  &:active{
+    box-shadow: 0 3px 19px rgba($color, .8);
+  }
+}
+
+// Module
+// ==================
+
+.btn{
+  color: #fff;
+  font-weight: 700;
+  background: $color;
+  border-radius: 46px;
+  padding: 14px 26px;
+  @extend %btn-shadow;
+
+
+}

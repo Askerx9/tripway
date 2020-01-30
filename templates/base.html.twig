@@ -2,12 +2,31 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('build/app.css') }}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+
+        <header>
+            <div class="container">
+                <button class="burger"><span>Menu</span></button>
+                <button class="btn--search">Search</button>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li class="nav__el"><a href="">Accueil</a></li>
+                <li class="nav__el"><a href="">Trouver un planning</a></li>
+                <li class="nav__el"><a href="">Créer un planning</a></li>
+                <li class="nav__el"><a href="">Se connecter</a></li>
+            </ul>
+        </nav>
+
         {% block body %}{% endblock %}
+
         <script src="{{ asset('build/app.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
