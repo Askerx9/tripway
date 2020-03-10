@@ -1,0 +1,34 @@
+
+
+
+  <a href="#" class="planning-card">
+    <div class="planning-card__header">
+      <div>
+        <h3 class="planning-card__title">
+          <span>Japon</span> <br>
+          <span>Planning 2 semaines</span>
+        </h3>
+        <p class="planning-card__country">
+          Japon
+        </p>
+        <div class="planning-card__note">
+          <img src="./images/star.svg" alt="">
+          <img src="./images/star.svg" alt="">
+          <img src="./images/star.svg" alt="">
+          <img src="./images/star.svg" alt="">
+          <img src="./images/star-half-alt.svg" alt="">
+        </div>
+      </div>
+      <div class="planning-card__action">
+        <button class="planning-card__action__like">like</button class="planning-card__action">
+        <button class="planning-card__action__save">save</button>
+      </div>
+    </div>
+    {% if footer %}
+    <div class="planning-card__footer">
+        <p class="planning-card__info planning-card__info--activity">7 villes</p>
+        <p class="planning-card__info planning-card__info--person">2 pers</p>
+        <p class="planning-card__info planning-card__info--budget">2000€</p>
+    </div>
+    {% endif %}
+  </a>

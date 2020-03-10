@@ -1,30 +1,39 @@
 .home__header{
-  min-height: 500px;
-  background: url(../../images/bg_mask@2x.jpg) no-repeat center;
-  background-size: 100% 100%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: space(9);
+
+  &>div{
+    min-height: 500px;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &>div:before{
+    content: "";
+    width: 100vmax;
+    height: 100vmax;
+    background: url(../../images/bg_mask@2x.jpg) no-repeat center;
+    background-size: cover;
+    border-radius: 0 0 50%50%;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  & h1{
+    @extend %title--logo
+  }
 
   & .btn{
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 50%);
-  }
-}
-
-.title--logo{
-  width: 200px;
-  height: 117px;
-  background: url(../../images/tripway_logo.svg) no-repeat center;
-  margin: 0 auto space(1);
-  text-indent: -9999px;
-
-  &+p{
-    color: #fff;
-    text-align: center;
   }
 }

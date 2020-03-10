@@ -3,10 +3,54 @@
 
 {% block body %}
   <section class="home__header">
-    <div class="container">
-      <h1 class="title title--logo">Tripway</h1>
-      <p>Planning sur mesure</p>
+    <div>
+      <div>
+        <h1>Tripway</h1>
+        <p>Planning sur mesure</p>
+      </div>
     </div>
     <a href="" class="btn btn--color">Plus d'info</a>
   </section>
+
+  <main>
+
+    <section class="container home__text">
+      <p class="title quote">
+        Partez<br>
+        au bout du monde<br>
+        l'esprit tranquille<br>
+      </p>
+      <h2 class="subtitle subtitle--color">
+        Tripway?
+      </h2>
+      <p>
+        Vous aimeriez vous rendre dans un pays, mais vous ne savez pas quoi faire sur place? Tripway, c’est un concept de planning sur mesure, avec la possibilité de le personnalisé directement sur le site.
+      </p>
+      <p>
+        Besoin d’aide?<br>
+        Vous ne savez pas comment vous y prendre? Niveau papier, passeport, transports, hôtels,… vous êtes perdu? Nous pouvons vous aider!
+      </p>
+
+      <a href="" class="btn btn--color">Besoin d'aide</a>
+    </section>
+
+    <section class="home__plannings swiper-container">
+      <ul class="swiper-wrapper">
+        {% for i in range(0, 3) %}
+          <li class="swiper-slide">
+            {% include 'modules/planning-card.html.twig' with {'footer': false} %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="home__text container">
+      <h2 class="subtitle subtitle--color">
+        Personnaliser?
+      </h2>
+      <p>Afin de vous aidez à faire les meilleurs choix, nous vous proposons de personnalisé les plannings à votre guise en partant d’un planning existant.</p>
+      <a href="" class="btn btn--color">Créer son planning</a>
+    </section>
+
+  </main>
 {% endblock %}
