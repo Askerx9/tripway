@@ -8,9 +8,10 @@ $color: #FF4848;
 
 // Outils
 // ==================
-@import "tools/reset";
-@import "tools/functions";
-@import "tools/mixins";
+@import "base/reset";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "base/_typography";
 
 // Generic
 // ==================
@@ -24,27 +25,30 @@ body {
 }
 
 .container,
-%container{
+%container {
   width: percentage(320/375);
   margin: 0 auto;
 }
 
+// Layout
+// ==================
+@import "layout/_header";
+@import "layout/_paragraph";
+
 // Modules
 // ==================
-// @import "modules/typography";
-@import "modules/layout";
-@import "modules/title";
-@import "modules/button";
-@import "modules/planning-card";
-@import "modules/filter";
-@import "modules/nav/nav";
-@import "modules/nav/burger";
+// @import "components/typography";
+@import "components/layout";
+@import "components/_button";
+@import "components/_planning-card";
+@import "components/_filter";
+@import "layout/_nav";
+@import "components/_burger";
 
 // Pages
 // ==================
-@import "home/home-global";
 @import "home/header";
-@import "home/plannings";
-@import "discover/global";
+@import "pages/_home";
+@import "pages/_discover";
 // @import "pages/single";
 // @import "pages/single";

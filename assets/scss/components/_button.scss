@@ -1,9 +1,4 @@
-// Variables
-// ==================
 
-
-// Mixins
-// ==================
 %btn-shadow{
   box-shadow: 0 3px 49px rgba($color, .8);
   transition: box-shadow .15s ease-in-out;
@@ -12,16 +7,12 @@
   }
 }
 
-// Module
-// ==================
-
 .btn{
   color: #fff;
   font-weight: 700;
   background: $color;
   border-radius: 46px;
   padding: 14px 26px;
+  display: inline-block;
   @extend %btn-shadow;
-
-
 }

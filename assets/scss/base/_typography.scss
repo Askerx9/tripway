@@ -1,0 +1,42 @@
+// Variables
+// ==================
+$f-a: 'a', serif;
+$f-b: "b", Sans-serif;
+
+// Title
+// ==================
+%title--logo{
+  width: 200px;
+  height: 117px;
+  margin: 0 auto space(1);
+  @include replace-text(url(../../images/tripway_logo.svg));
+
+  &+p{
+    color: #fff;
+    text-align: center;
+  }
+}
+
+%title{
+  font-size: em(24);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: space(5);
+}
+
+.subtitle {
+  font-size: em(20);
+  font-weight: bold;
+  margin-bottom: space(1);
+}
+
+.subtitle--color {
+  color: $color;
+}
+
+// Font face
+// ==================
+/*
+@include font-face('a', './fonts/HKGrotesk-Regular', 300 400 600 700, null, woff2 woff ttf svg eot);
+*/
+

@@ -1,0 +1,36 @@
+.filter {
+  margin-top: space(6) + 40;
+  background: #3E3E3E;
+  padding: 10px 38px;
+  border-radius: 50px;
+  margin-bottom: space(3);
+  font-size: 15px;
+  color: #FFFFFF;
+}
+.filter ul {
+  height: 30px;
+  line-height: 25px;
+  display: flex;
+  overflow-x: scroll;
+}
+.filter__el {
+  margin-right: space(3);
+  opacity: .2;
+}
+.filter__el.isActif {
+  opacity: 1;
+  position: relative;
+}
+.filter__el.isActif:after {
+  content: "";
+  width: percentage(29/72);
+  min-width: 15px;
+  height: 4px;
+  border-radius: 4px;
+  display: block;
+  background: $color;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0px);
+}

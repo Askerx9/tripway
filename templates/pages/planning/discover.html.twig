@@ -1,26 +1,25 @@
-
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Découvrir :: Tripway
+    Découvrir :: Tripway
 {% endblock %}
 
 {% block body %}
-  <main class="container">
-    <section class="filter">
-      <ul>
-        <li class="filter__el actif"><a href="">Populaire</a></li>
-        <li class="filter__el"><a href="">Asie</a></li>
-        <li class="filter__el"><a href="">USA</a></li>
-        <li class="filter__el"><a href="">Europe</a></li>
-      </ul>
-    </section>
-    <ul class="discover__plannings">
-      {% for i in range(0, 3) %}
-          <li>
-            {% include 'modules/planning-card.html.twig' with {'footer': true} %}
-          </li>
-        {% endfor %}
-    </ul>
-  </main>
+    <main class="container">
+        <section class="filter">
+            <ul>
+                <li class="filter__el isActif"><a href="">Populaire</a></li>
+                <li class="filter__el"><a href="">Asie</a></li>
+                <li class="filter__el"><a href="">USA</a></li>
+                <li class="filter__el"><a href="">Europe</a></li>
+            </ul>
+        </section>
+        <ul class="discover__plannings">
+            {% for i in range(0, 3) %}
+                <li>
+                    {% include 'modules/planning-card.html.twig' with {'footer': true} %}
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
 {% endblock %}

@@ -1,8 +1,10 @@
-.home__header{
+//TODO: Refactor
+
+.home__header {
   position: relative;
   margin-bottom: space(9);
 
-  &>div{
+  & > div {
     min-height: 500px;
     width: 100%;
     position: relative;
@@ -12,13 +14,13 @@
     align-items: center;
   }
 
-  &>div:before{
+  & > div:before {
     content: "";
     width: 100vmax;
     height: 100vmax;
     background: url(../../images/bg_mask@2x.jpg) no-repeat center;
     background-size: cover;
-    border-radius: 0 0 50%50%;
+    border-radius: 0 0 50% 50%;
     position: absolute;
     z-index: -1;
     bottom: 0;
@@ -26,11 +28,11 @@
     transform: translate(-50%, 0);
   }
 
-  & h1{
+  & h1 {
     @extend %title--logo
   }
 
-  & .btn{
+  & .btn {
     position: absolute;
     bottom: 0;
     left: 50%;

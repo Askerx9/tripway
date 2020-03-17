@@ -15,18 +15,8 @@ import Swiper from 'swiper';
 import 'swiper/css/swiper.min.css';
 
 new Swiper ('.home__plannings', {
-  // Optional parameters
   direction: 'horizontal',
   slidesPerView: 'auto',
   centeredSlides : true,
   spaceBetween: 15,
-})
-
-// new Swiper ('.swiper-container', {
-//   direction: 'horizontal',
-//   loop: true,
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-// })
+});

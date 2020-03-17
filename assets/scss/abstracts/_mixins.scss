@@ -4,16 +4,64 @@
 // ==================
 @mixin up($size) {
   $size: strip-unit($size);
-  @media (min-width: $size * 1px) { @content; }
+  @media (min-width: $size * 1px) {
+    @content;
+  }
 }
+
 @mixin down($size) {
   $size: strip-unit($size);
-  @media (max-width: $size * 1px) { @content; }
+  @media (max-width: $size * 1px) {
+    @content;
+  }
 }
+
 @mixin between($down, $up) {
   $down: strip-unit($down);
   $up: strip-unit($up);
-  @media (min-width: $down * 1px) and (max-width: $up * 1px) { @content; }
+  @media (min-width: $down * 1px) and (max-width: $up * 1px) {
+    @content;
+  }
+}
+
+// Layout
+// ==================
+@mixin flex($direction: row, $align: center, $justify: space-between , $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+
+@mixin replace-text($image, $x: 50%, $y: 50%) {
+  text-indent: -99999px;
+  overflow: hidden;
+  text-align: left;
+
+  background: {
+    color: transparent;
+    image: $image;
+    repeat: no-repeat;
+    position: $x $y;
+    size: contain;
+  }
+}
+
+@mixin position($top: 50%, $left: 50%, $X: -50%, $Y: -50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($X, $Y);
+}
+
+@mixin background($image, $x: 50%, $y: 50%, $size: contain) {
+  background: {
+    image: $image;
+    repeat: no-repeat;
+    position: $x $y;
+    size: $size;
+  };
 }
 
 // Espacement
@@ -35,13 +83,13 @@
   $src: null;
 
   $extmods: (
-    eot: "?",
-    svg: "#" + str-replace($name, " ", "_")
+          eot: "?",
+          svg: "#" + str-replace($name, " ", "_")
   );
 
   $formats: (
-    otf: "opentype",
-    ttf: "truetype"
+          otf: "opentype",
+          ttf: "truetype"
   );
 
   @each $ext in $exts {
@@ -61,14 +109,14 @@
     $weights: $weight;
     @each $weight in $weights {
       $suffix: map-get((
-        300: Light,
-        400: Regular,
-        500: Medium,
-        600: SemiBold,
-        700: Bold
+              300: Light,
+              400: Regular,
+              500: Medium,
+              600: SemiBold,
+              700: Bold
       ), $weight);
       @include font-face($name, $path + "-" + $suffix,
-      $weight, $style, $exts)
+              $weight, $style, $exts)
     }
   }
 }

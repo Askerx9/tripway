@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Tripway{% endblock %}</title>
-        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tripway{% endblock %}</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
 
-        <header>
-            <div class="container">
-                <button class="burger"><span>Menu</span></button>
-                <button class="btn--search">Search</button>
-            </div>
-        </header>
+<header>
+    <div class="container">
+        <button class="burger"><span>Menu</span></button>
+        <button class="btn--search">Search</button>
+    </div>
+</header>
 
-        <nav class="nav">
-            <ul>
-                <li class="nav__el"><a href="">Accueil</a></li>
-                <li class="nav__el"><a href="">Trouver un planning</a></li>
-                <li class="nav__el"><a href="">Créer un planning</a></li>
-                <li class="nav__el"><a href="">Se connecter</a></li>
-            </ul>
-        </nav>
+<nav class="nav">
+    <ul>
+        <li class="nav__el"><a href="">Accueil</a></li>
+        <li class="nav__el"><a href="">Trouver un planning</a></li>
+        <li class="nav__el"><a href="">Créer un planning</a></li>
+        <li class="nav__el"><a href="">Se connecter</a></li>
+    </ul>
+</nav>
 
-        {% block body %}{% endblock %}
+{% block body %}{% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </body>
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
 </html>
