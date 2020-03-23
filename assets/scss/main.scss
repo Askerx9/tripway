@@ -8,9 +8,9 @@ $color: #FF4848;
 
 // Outils
 // ==================
-@import "base/reset";
-@import "abstracts/functions";
-@import "abstracts/mixins";
+@import "base/_reset";
+@import "abstracts/_functions";
+@import "abstracts/_mixins";
 @import "base/_typography";
 
 // Generic
@@ -33,21 +33,19 @@ body {
 // Layout
 // ==================
 @import "layout/_header";
-@import "layout/_paragraph";
+@import "layout/_nav";
 
 // Modules
 // ==================
 // @import "components/typography";
-@import "components/layout";
 @import "components/_button";
 @import "components/_planning-card";
 @import "components/_filter";
-@import "layout/_nav";
+
 @import "components/_burger";
 
 // Pages
 // ==================
-@import "home/header";
 @import "pages/_home";
 @import "pages/_discover";
 // @import "pages/single";

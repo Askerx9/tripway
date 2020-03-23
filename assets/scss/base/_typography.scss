@@ -5,7 +5,7 @@ $f-b: "b", Sans-serif;
 
 // Title
 // ==================
-%title--logo{
+.title--logo{
   width: 200px;
   height: 117px;
   margin: 0 auto space(1);
@@ -32,6 +32,28 @@ $f-b: "b", Sans-serif;
 
 .subtitle--color {
   color: $color;
+}
+
+.text {
+  @include flex($direction: column, $align: flex-start);
+}
+
+.text .quote {
+  @extend %title;
+  align-self: center;
+}
+
+.text p {
+  margin-bottom: space(2);
+
+  &:last-of-type{
+    margin-bottom: space(7);
+  }
+}
+
+.text .btn {
+  align-self: center;
+  margin-bottom: space(7);
 }
 
 // Font face

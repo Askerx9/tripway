@@ -1,16 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <section class="home__header">
-        <div>
-            <div>
-                <h1>Tripway</h1>
-                <p>Planning sur mesure</p>
-            </div>
-        </div>
+
+{% block header %}
+    <section class="header__content">
+        <h1 class="title--logo">Tripway</h1>
+        <p>Planning sur mesure</p>
         <a href="" class="btn btn--color">Plus d'info</a>
     </section>
+{% endblock %}
 
+{% block body %}
     <main>
 
         <section class="container text">

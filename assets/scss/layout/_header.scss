@@ -1,0 +1,41 @@
+header {
+  width: 100%;
+  padding-bottom: space(9);
+  overflow-x: hidden;
+  text-align: center;
+}
+.header__action {
+  @include flex();
+  margin-top: space(4);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header__content {
+  min-height: 500px;
+  width: 100%;
+  position: relative;
+  @include flex($direction: column, $justify: center);
+}
+
+.header__content:before {
+  content: "";
+  width: 100vh;
+  height: 100vh;
+  background: url(../../images/bg_mask@2x.jpg) no-repeat center;
+  background-size: cover;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+header .btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
