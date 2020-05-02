@@ -3586,16 +3586,16 @@
         },
         {
             "name": "symfony/intl",
-            "version": "v5.0.3",
+            "version": "v5.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
-                "reference": "2b3694976f02ed6a7894d8a772c9d55cee5d9677"
+                "reference": "dc50ad5039ac685ca87306a346dc119cacdfea25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/intl/zipball/2b3694976f02ed6a7894d8a772c9d55cee5d9677",
-                "reference": "2b3694976f02ed6a7894d8a772c9d55cee5d9677",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/dc50ad5039ac685ca87306a346dc119cacdfea25",
+                "reference": "dc50ad5039ac685ca87306a346dc119cacdfea25",
                 "shasum": ""
             },
             "require": {
@@ -3657,7 +3657,21 @@
                 "l10n",
                 "localization"
             ],
-            "time": "2020-01-04T14:08:26+00:00"
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-12T14:40:17+00:00"
         },
         {
             "name": "symfony/mailer",
@@ -6865,5 +6879,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.3.12"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }

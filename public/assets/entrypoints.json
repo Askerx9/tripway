@@ -1,0 +1,13 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "http://tripway.localhost:8080/assets/runtime.js",
+        "http://tripway.localhost:8080/assets/app.js"
+      ],
+      "css": [
+        "http://tripway.localhost:8080/assets/app.css"
+      ]
+    }
+  }
+}

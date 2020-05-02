@@ -1,6 +1,6 @@
 .planning-card {
   width: 100%;
-  min-height: 200px;
+  min-height: 180px;
   padding: em(32, 18) em(32, 18);
   border-radius: 40px;
   display: inline-block;
@@ -20,7 +20,7 @@
   color: #fff;
 }
 .planning-card__title {
-  font-size: em(18);
+  font-size: em(15);
 }
 .planning-card__country {
   text-transform: uppercase;

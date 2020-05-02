@@ -17,17 +17,28 @@ $f-b: "b", Sans-serif;
   }
 }
 
-%title{
+.title{
   font-size: em(24);
-  font-weight: 400;
+  font-weight: 200;
   text-align: center;
   margin-bottom: space(5);
+  color: #FFFFFF;
 }
 
 .subtitle {
   font-size: em(20);
   font-weight: bold;
   margin-bottom: space(1);
+  color: #3A3A3A;
+}
+.subtitle + ul {
+  display: flex;
+  color: #999999;
+  margin-bottom: space(2);
+}
+
+.subtitle + ul li {
+  margin-right: space(2);
 }
 
 .subtitle--color {
@@ -39,12 +50,15 @@ $f-b: "b", Sans-serif;
 }
 
 .text .quote {
-  @extend %title;
+  @extend .title;
   align-self: center;
+  color: #000000;
 }
 
 .text p {
   margin-bottom: space(2);
+  font-weight: 200;
+  color: #999999;
 
   &:last-of-type{
     margin-bottom: space(7);
