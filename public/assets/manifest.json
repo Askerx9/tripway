@@ -1,6 +1,7 @@
 {
   "assets/app.css": "http://tripway.localhost:8080/assets/app.css",
   "assets/app.js": "http://tripway.localhost:8080/assets/app.js",
+  "assets/form.js": "http://tripway.localhost:8080/assets/form.js",
   "assets/runtime.js": "http://tripway.localhost:8080/assets/runtime.js",
   "assets/images/bg.png": "http://tripway.localhost:8080/assets/images/bg.a8a05cfc.png",
   "assets/images/bg_mask@2x.jpg": "http://tripway.localhost:8080/assets/images/bg_mask@2x.65078b01.jpg",
@@ -10,5 +11,6 @@
   "assets/images/price.svg": "http://tripway.localhost:8080/assets/images/price.ea89accf.svg",
   "assets/images/save.svg": "http://tripway.localhost:8080/assets/images/save.5d888fbe.svg",
   "assets/images/start.svg": "http://tripway.localhost:8080/assets/images/start.21a96967.svg",
-  "assets/images/tripway_logo.svg": "http://tripway.localhost:8080/assets/images/tripway_logo.aee0ffbc.svg"
+  "assets/images/tripway_logo.svg": "http://tripway.localhost:8080/assets/images/tripway_logo.aee0ffbc.svg",
+  "assets/images/background_header_home.jpg": "http://tripway.localhost:8080/assets/images/background_header_home.c9e47f45.jpg"
 }

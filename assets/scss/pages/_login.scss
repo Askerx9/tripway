@@ -1,0 +1,32 @@
+.login:before,
+.login:after {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.login:before {
+  background: url(../../images/background_header_home.jpg) no-repeat center;
+  z-index: -2;
+}
+
+.login:after {
+  backdrop-filter: blur(30px);
+  z-index: -1;
+}
+
+
+.login h1 {
+  margin: 60px auto;
+}
+
+.login form {
+  @include flex(column);
+}
+
+.login form label, .login form input {
+  color: #fff;
+}

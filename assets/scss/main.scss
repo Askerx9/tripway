@@ -1,12 +1,19 @@
-// Import Fornts
+// Import Fonts
 // ==================
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,700&display=swap');
 
 // Variables
 // ==================
-$color: #FF4848;
+$color : #FF4848;
+$text-color : #3E3E3E;
+$contrast : #BEBEB9;
+$danger : #D90416;
+$success : #50AD71;
+$warning : #F2B705;
 
-// Outils
+$tt : .15s;
+
+// Utils
 // ==================
 @import "base/_reset";
 @import "abstracts/_functions";
@@ -34,6 +41,7 @@ body {
 // ==================
 @import "layout/_header";
 @import "layout/_nav";
+@import "layout/_form";
 
 // Modules
 // ==================
@@ -41,12 +49,13 @@ body {
 @import "components/_button";
 @import "components/_planning-card";
 @import "components/_filter";
-
 @import "components/_burger";
+@import "components/_alert";
 
 // Pages
 // ==================
 @import "pages/_home";
 @import "pages/_discover";
+@import "pages/_login";
 // @import "pages/single";
 // @import "pages/single";

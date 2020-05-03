@@ -2,11 +2,14 @@
 
 namespace App\Entity;
 
+use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Table(name="`user`")
  */
 class User implements UserInterface
 {
@@ -62,6 +65,11 @@ class User implements UserInterface
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $reset_pwd_at;
+
+    public function __construct()
+    {
+        $this->setCreatedAt( new DateTime());
+    }
 
     public function getId(): ?int
     {
@@ -165,24 +173,24 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getLastSignAt(): ?\DateTimeInterface
+    public function getLastSignAt(): ?DateTimeInterface
     {
         return $this->last_sign_at;
     }
 
-    public function setLastSignAt(?\DateTimeInterface $last_sign_at): self
+    public function setLastSignAt(?DateTimeInterface $last_sign_at): self
     {
         $this->last_sign_at = $last_sign_at;
 
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeInterface $created_at): self
+    public function setCreatedAt(DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
 
@@ -201,12 +209,12 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getResetPwdAt(): ?\DateTimeInterface
+    public function getResetPwdAt(): ?DateTimeInterface
     {
         return $this->reset_pwd_at;
     }
 
-    public function setResetPwdAt(?\DateTimeInterface $reset_pwd_at): self
+    public function setResetPwdAt(?DateTimeInterface $reset_pwd_at): self
     {
         $this->reset_pwd_at = $reset_pwd_at;
 
