@@ -9,8 +9,6 @@ export default class FormInput
     {
         this.elements = document.querySelectorAll(selector);
 
-        console.log(this.elements);
-
         for (let i = 0; i < this.elements.length; i++)
         {
             this.elements[i].addEventListener('input', this.change)
@@ -31,4 +29,4 @@ export default class FormInput
 
 }
 
-new FormInput('.form__group input');
+new FormInput('.form__input input');

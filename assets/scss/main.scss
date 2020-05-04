@@ -37,6 +37,10 @@ body {
   margin: 0 auto;
 }
 
+small {
+  font-size: .8em;
+}
+
 // Layout
 // ==================
 @import "layout/_header";
@@ -47,7 +51,7 @@ body {
 // ==================
 // @import "components/typography";
 @import "components/_button";
-@import "components/_planning-card";
+@import "components/_planning";
 @import "components/_filter";
 @import "components/_burger";
 @import "components/_alert";
@@ -57,5 +61,7 @@ body {
 @import "pages/_home";
 @import "pages/_discover";
 @import "pages/_login";
+@import "pages/_profil";
+@import "pages/_signin";
 // @import "pages/single";
 // @import "pages/single";

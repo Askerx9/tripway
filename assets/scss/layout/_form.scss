@@ -1,15 +1,19 @@
 .form__group {
+  margin-bottom: space(4);
+}
+
+.form__input {
   width: 100%;
   border-bottom: 1px solid $contrast;
-  margin-bottom: 25px;
+  margin: space(1) 0 space(2);
   position: relative;
 }
 
-.form__group * {
+.form__input * {
   outline: none;
 }
 
-.form__group label {
+.form__input label {
   position: absolute;
   top: 50%;
   left: 0;
@@ -21,16 +25,25 @@
   transition: transform $tt ease-in-out;
 }
 
-.form__group .label--change {
-  transform: translate(10px, -200%) scale(.8);
+.form__input .label--change {
+  transform: translate(10px, -150%) scale(.7);
 }
 
-.form__group input {
+.form__input input {
   appearance: none;
   width: 100%;
   height: 100%;
   padding: 7px 10px;
   background: transparent;
   border: none;
+}
+
+.checkbox{
+  margin-bottom: space(2);
+  display: block ;
+}
+
+.check--valid {
+  color: $success;
 }
 

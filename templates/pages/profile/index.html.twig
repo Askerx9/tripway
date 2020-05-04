@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Mon espace :: Tripway
+{% endblock %}
+
+{% block header %}
+    <section class="header__content header__content--profile">
+        <h1 class="title">Hello,<span class="bold">{{ user.firstname }}</span></h1>
+    </section>
+{% endblock %}
+
+{% block body %}
+    <main class="profile">
+        <section class="container">
+            <h2 class="subtitle subtitle--color">Tes plannings</h2>
+            <ul class="planning">
+                <li class="planning__el">
+                    <h3 class="subtitle">Sri lanka</h3>
+                    <p class="planning__description">2 semaines</p>
+
+                    <div class="planning-card">
+                        <div class="planning-card__footer">
+                            <p class="planning-card__info planning-card__info--activity">7 villes</p>
+                            <p class="planning-card__info planning-card__info--person">2 pers</p>
+                            <p class="planning-card__info planning-card__info--budget">2000€</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign in :: Tripway{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('form') }}
+    {{ encore_entry_script_tags('PasswordValidator') }}
+{% endblock %}
+
+{% block body %}
+    <main class="sign">
+        <section class="container">
+            <h1 class="subtitle">Créer un compte sur Tripway</h1>
+            {{ form_start(formUser) }}
+                <h2 class="subtitle--form">Information personnelle&nbsp;:</h2>
+                <div class="form__group">
+                    <div class="form__input">
+                        {{ form_row(formUser.firstname,{'attr': {'autofocus': true}}) }}
+                    </div>
+
+                    <div class="form__input">
+                        {{ form_row(formUser.lastname) }}
+                    </div>
+                </div>
+                <h2 class="subtitle--form">Information de connexion&nbsp;:</h2>
+                <div class="form__group">
+                    <div class="form__input">
+                        {{ form_row(formUser.email) }}
+                    </div>
+
+                    <div class="form__input">
+                        {{ form_row(formUser.password) }}
+                    </div>
+
+                    <div class="form__input">
+                        <label for="password_validation">Valider le mot de passe</label>
+                        <input type="password" name="password_validation" id="password_validation">
+                    </div>
+
+                    <ul class="password_point">
+                        <li><small>Votre mot de passe doit contenir au moins:</small></li>
+                        <li class="check check-uppercase"><small>- 1 majuscule</small></li>
+                        <li class="check check-digit"><small>- 1 chiffre</small></li>
+                        <li class="check check-special"><small>- 1 caractère spéciale</small></li>
+                    </ul>
+                </div>
+
+                <h2 class="subtitle--form">Légal&nbsp;:</h2>
+                <div class="form__group">
+                    <label for="form_opt_in" class="checkbox">
+                        {{ form_widget(formUser.opt_in) }}
+                        <small>J'accepte de recevoir des mails de la part de Tripway.</small>
+                    </label>
+
+                    <p><small>En créant un compte sur Tripway, vous acceptez ses conditions d'utilisation! </small></p>
+                </div>
+
+                <button class="btn btn--primary" type="submit" disabled>
+                    Créer mon compte
+                </button>
+            {{ form_end(formUser) }}
+{#            <form method="post">#}
+                {#{% if error %}
+                    <div class="alert alert--danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}#}
+
+                {#<div class="form__group">
+                    <label for="inputEmail">E-mail</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+                </div>
+                <div class="form__group">
+                    <label for="inputPassword">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" required>
+                </div>#}
+
+{#
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+#}
+
+                {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Remember me
+                        </label>
+                    </div>
+                #}
+
+                {#<div>
+                    <a href="{{ path('profile.create') }}" class="btn btn--secondary" >
+                        S'inscrire
+                    </a>
+                    <button class="btn btn--primary" type="submit">
+                        Se connecter
+                    </button>
+                </div>#}
+{#            </form>#}
+        </section>
+    </main>
+
+{% endblock %}

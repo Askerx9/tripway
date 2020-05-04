@@ -66,6 +66,11 @@ class User implements UserInterface
      */
     private $reset_pwd_at;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $opt_in;
+
     public function __construct()
     {
         $this->setCreatedAt( new DateTime());
@@ -217,6 +222,18 @@ class User implements UserInterface
     public function setResetPwdAt(?DateTimeInterface $reset_pwd_at): self
     {
         $this->reset_pwd_at = $reset_pwd_at;
+
+        return $this;
+    }
+
+    public function getOptIn(): ?bool
+    {
+        return $this->opt_in;
+    }
+
+    public function setOptIn(bool $opt_in): self
+    {
+        $this->opt_in = $opt_in;
 
         return $this;
     }
