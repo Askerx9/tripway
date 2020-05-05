@@ -5,11 +5,14 @@ namespace App\Entity;
 use DateTime;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\Table(name="`user`")
+ * @UniqueEntity(fields={"email"}, message="Cette email est déjà utilisée")
  */
 class User implements UserInterface
 {
@@ -22,6 +25,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\Email()
      */
     private $email;
 
@@ -33,8 +37,14 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\Length(min="8", minMessage="Votre mot de passe doit faire minimum 8 caractères")
      */
     private $password;
+
+    /**
+     * @Assert\EqualTo(propertyPath="password", message="les mots de passes ne sont pas identiques")
+     */
+    private $confirm_password;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -70,6 +80,11 @@ class User implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $opt_in;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $validate_at;
 
     public function __construct()
     {
@@ -133,6 +148,18 @@ class User implements UserInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getConfirmPassword(): string
+    {
+        return (string) $this->confirm_password;
+    }
+
+    public function setConfirmPassword(string $confirm_password): self
+    {
+        $this->confirm_password = $confirm_password;
 
         return $this;
     }
@@ -234,6 +261,18 @@ class User implements UserInterface
     public function setOptIn(bool $opt_in): self
     {
         $this->opt_in = $opt_in;
+
+        return $this;
+    }
+
+    public function getValidateAt(): ?\DateTimeInterface
+    {
+        return $this->validate_at;
+    }
+
+    public function setValidateAt(?\DateTimeInterface $validate_at): self
+    {
+        $this->validate_at = $validate_at;
 
         return $this;
     }

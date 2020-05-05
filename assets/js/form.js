@@ -11,9 +11,17 @@ export default class FormInput
 
         for (let i = 0; i < this.elements.length; i++)
         {
-            this.elements[i].addEventListener('input', this.change)
+            const el = this.elements[i];
+
+            if(el.value.length > 0) {
+                el.parentElement.querySelector('label').classList.add('label--change')
+            }
+            el.addEventListener('change', this.change)
+            el.addEventListener('input', this.change)
         }
     }
+
+
 
     change (e)
     {

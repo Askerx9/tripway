@@ -1,5 +1,6 @@
 .form__group {
   margin-bottom: space(4);
+  width: 100%;
 }
 
 .form__input {
@@ -11,6 +12,10 @@
 
 .form__input * {
   outline: none;
+}
+
+.form__input ul {
+  display: none;
 }
 
 .form__input label {
@@ -45,5 +50,9 @@
 
 .check--valid {
   color: $success;
+}
+
+input[type="checkbox"] {
+  border-radius: 50%;
 }
 

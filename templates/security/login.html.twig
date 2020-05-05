@@ -10,6 +10,13 @@
 {% block body %}
     <main class="login">
         <section class="container">
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert--{{ label }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
             <h1 class="title--logo">Login</h1>
             <form method="post">
                 {% if error %}
@@ -19,17 +26,19 @@
 
                 {% if app.user %}
                     <div >
-                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        You are logged in as {{ app.user.username }}, <a href="{{ path('app.logout') }}">Logout</a>
                     </div>
                 {% endif %}
 
-                <div class="form__input">
-                    <label for="inputEmail">E-mail</label>
-                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-                </div>
-                <div class="form__input">
-                    <label for="inputPassword">Mot de passe</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control" required>
+                <div class="form__group">
+                    <div class="form__input">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required>
+                    </div>
+                    <div class="form__input">
+                        <label for="inputPassword">Mot de passe</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" required>
+                    </div>
                 </div>
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
@@ -45,14 +54,11 @@
                     </div>
                 #}
 
-                <div>
-                    <a href="{{ path('profile.create') }}" class="btn btn--secondary" >
-                        S'inscrire
-                    </a>
-                    <button class="btn btn--primary" type="submit">
-                        Se connecter
-                    </button>
-                </div>
+
+                <button class="btn btn--primary" type="submit">
+                    Se connecter
+                </button>
+                <a href="{{ path('app.registration') }}" class="link link--signup" >S'inscrire </a>
             </form>
         </section>
     </main>
