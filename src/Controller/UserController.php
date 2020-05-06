@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/profile", name="profile.index")
+     * @Route("/profile", name="profile_index")
      * @return Response
      */
     public function index(): Response
