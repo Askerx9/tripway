@@ -8,6 +8,18 @@
       "css": [
         "http://tripway.localhost:8080/assets/app.css"
       ]
+    },
+    "form": {
+      "js": [
+        "http://tripway.localhost:8080/assets/runtime.js",
+        "http://tripway.localhost:8080/assets/form.js"
+      ]
+    },
+    "PasswordValidator": {
+      "js": [
+        "http://tripway.localhost:8080/assets/runtime.js",
+        "http://tripway.localhost:8080/assets/PasswordValidator.js"
+      ]
     }
   }
 }
