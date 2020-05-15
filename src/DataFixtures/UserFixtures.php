@@ -10,6 +10,10 @@ use Faker;
 
 class UserFixtures extends Fixture
 {
+    /**
+     * @var UserPasswordEncoderInterface
+     */
+
     private $passwordEncoder;
 
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
@@ -17,7 +21,7 @@ class UserFixtures extends Fixture
         $this->passwordEncoder = $passwordEncoder;
     }
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager) : void
     {
         $faker = Faker\Factory::create('fr_FR');
 

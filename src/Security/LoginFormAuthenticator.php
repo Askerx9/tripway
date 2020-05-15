@@ -3,6 +3,8 @@
 namespace App\Security;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
+use App\Services\UserService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,17 +26,22 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 {
     use TargetPathTrait;
 
-    private $entityManager;
-    private $urlGenerator;
-    private $csrfTokenManager;
-    private $passwordEncoder;
+    private EntityManagerInterface $entityManager;
+    private UrlGeneratorInterface $urlGenerator;
+    private CsrfTokenManagerInterface $csrfTokenManager;
+    private UserPasswordEncoderInterface $passwordEncoder;
+    private ?UserInterface $user = null;
+    private UserRepository $userRepository;
+    private UserService $userService;
 
-    public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(UserRepository $userRepository, EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder, UserService $userService)
     {
         $this->entityManager = $entityManager;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
+        $this->userRepository = $userRepository;
+        $this->userService = $userService;
     }
 
     public function supports(Request $request)
@@ -77,6 +84,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 
     public function checkCredentials($credentials, UserInterface $user)
     {
+        $this->user = $user;
         return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
     }
 
@@ -88,16 +96,19 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         return $credentials['password'];
     }
 
-    public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
+    public function onAuthenticationSuccess( Request $request, TokenInterface $token, string $providerKey ) : RedirectResponse
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
+       if ($this->user instanceof  User) {
+            $this->userService->UpdateLastLogin($this->user, $this->entityManager);
+       }
 //        TODO: Renvoyer vers la page précedente!
-//        return new RedirectResponse($this->urlGenerator->generate('profile_index'));
+        return new RedirectResponse($this->urlGenerator->generate('profile_index'));
     }
 
-    protected function getLoginUrl()
+    protected function getLoginUrl() : string
     {
         return $this->urlGenerator->generate('app_login');
     }

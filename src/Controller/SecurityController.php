@@ -18,16 +18,10 @@ class SecurityController extends AbstractController
     /**
      * @Route("/login", name="app_login")
      */
-    public function login(AuthenticationUtils $authenticationUtils, EntityManagerInterface $manager): Response
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
-//        dd($this->getUser());
+
          if ($this->getUser()) {
-
-             $user = ($this->getUser())->setLastSignAt( new \DateTime() );
-
-             $manager->persist($user);
-             $manager->flush();
-
              return $this->redirectToRoute('profile_index');
          }
 
@@ -42,7 +36,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/signup", name="app.registration")
      */
-    public function registration (Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+    public function registration (Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) : Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationType::class, $user);
@@ -76,7 +70,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/logout", name="app.logout")
      */
-    public function logout()
+    public function logout() : void
     {
 //        TODO: Logout
 //        throw new \Exception('This method can be blank - it will be intercepted by the logout key on your firewall');

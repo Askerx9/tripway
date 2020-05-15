@@ -1,0 +1,8 @@
+App\Entity\User:
+  user_user:
+    email: "test\\@test.be"
+    firstname: "Antoine"
+    lastname: "Deschamps"
+    roles: "[]"
+    password: "\\$2y\\$10\\$uAs2wDzyIdnU3lgaB.V6/ettfwGzc8TWbCKFL0DtOer1QHEHYKQsC"
+    opt_in: "TRUE"

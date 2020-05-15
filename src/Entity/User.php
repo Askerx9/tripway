@@ -21,18 +21,18 @@ class User implements UserInterface
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      * @Assert\Email()
      */
-    private $email;
+    private string $email;
 
     /**
      * @ORM\Column(type="json")
      */
-    private $roles = [];
+    private array $roles = [];
 
     /**
      * @var string The hashed password
@@ -41,52 +41,52 @@ class User implements UserInterface
      * @Assert\Length(min="8", minMessage="Votre mot de passe doit faire minimum 8 caractères")
      * @Assert\Regex(pattern = "/^\S*(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W|_])\S*$/", message="Votre mot de passe doit contenir au moins : 1 majuscule, 1 chiffre et 1 caractère spécial")
      */
-    private $password;
+    private string $password;
 
     /**
      * @Assert\EqualTo(propertyPath="password", message="les mots de passes ne sont pas identiques")
      */
-    private $confirm_password;
+    private string $confirm_password;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $firstname;
+    private string $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $lastname;
+    private string $lastname;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $last_sign_at;
+    private ?\DateTimeInterface $last_sign_at;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $created_at;
+    private \DateTimeInterface $created_at;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $reset_pwd_token;
+    private ?string $reset_pwd_token;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $reset_pwd_at;
+    private ?\DateTimeInterface $reset_pwd_at;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $opt_in;
+    private bool $opt_in;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $validate_at;
+    private ?\DateTimeInterface $validate_at;
 
     public function __construct()
     {
@@ -169,15 +169,16 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
-    public function getSalt()
+    public function getSalt() : ?string
     {
         // not needed when using the "bcrypt" algorithm in security.yaml
+        return null;
     }
 
     /**
      * @see UserInterface
      */
-    public function eraseCredentials()
+    public function eraseCredentials() : void
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
