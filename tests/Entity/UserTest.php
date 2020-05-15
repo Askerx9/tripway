@@ -5,11 +5,14 @@ namespace App\Tests\Entity;
 
 
 use App\Entity\User;
+use Liip\TestFixturesBundle\Test\FixturesTrait;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Validator\ConstraintViolation;
 
 class UserTest extends KernelTestCase
 {
+    use FixturesTrait;
+
     public function getEntity() {
         return (new User())
             ->setEmail('test@email.com')
@@ -57,9 +60,10 @@ class UserTest extends KernelTestCase
         $this->assertHasErrors($user, 1);
     }
 
-//    public function testInvalidUsedEmail () {
-//        $user = $this->getEntity()->setEmail('morrensj@gmail.com');
-//        $this->assertHasErrors($user, 1);
-//    }
+    public function testInvalidUsedEmail () {
+        $this->loadFixtureFiles([dirname(__DIR__, 1). '/DataFixturesTest/users.yml']);
+        $user = $this->getEntity()->setEmail('test@test.be');
+        $this->assertHasErrors($user, 1);
+    }
 
 }
