@@ -33,6 +33,10 @@ header {
   transform: translate(-50%, 0);
 }
 
+.header__content--profile {
+  min-height: space(45);
+}
+
 header .btn {
   position: absolute;
   bottom: 0;

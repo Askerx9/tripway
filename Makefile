@@ -28,6 +28,10 @@ dev: vendor/autoload.php node_modules/time ## Lance le serveur de développement
 clean: ## Nettoie les containers
 	$(dc) -f docker-compose.yml down
 
+.PHONY: docker-console
+docker-console: ## Ouvre la console du containers php
+	$(dc) exec php fish
+
 .PHONY: seed
 seed: vendor/autoload.php ## Génère des données dans la base de données (docker-compose up doit être lancé)
 	$(sy) doctrine:migrations:migrate -q
@@ -49,8 +53,8 @@ rollback:
 .PHONY: test
 test: vendor/autoload.php ## Execute les tests
 	$(drtest) phptest bin/console doctrine:schema:validate --skip-sync
-	$(drtest) phptest vendor/bin/phpunit
-	$(dr) --no-deps node yarn run test
+	$(drtest) phptest vendor/bin/simple-phpunit
+	#$(dr) --no-deps node yarn run test
 
 .PHONY: tt
 tt: vendor/autoload.php ## Lance le watcher phpunit

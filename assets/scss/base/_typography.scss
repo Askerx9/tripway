@@ -28,21 +28,20 @@ $f-b: "b", Sans-serif;
 .subtitle {
   font-size: em(20);
   font-weight: bold;
-  margin-bottom: space(1);
-  color: #3A3A3A;
-}
-.subtitle + ul {
-  display: flex;
-  color: #999999;
   margin-bottom: space(2);
-}
-
-.subtitle + ul li {
-  margin-right: space(2);
+  color: #3A3A3A;
 }
 
 .subtitle--color {
   color: $color;
+}
+
+.subtitle--form {
+  margin-bottom: space(1);
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .text {

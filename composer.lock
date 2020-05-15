@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7261e1e789feced7d862bfe98397ecfe",
+    "content-hash": "22ecf10d79970ff79c0bc7339ac5140f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -6240,6 +6240,322 @@
     ],
     "packages-dev": [
         {
+            "name": "clue/stdio-react",
+            "version": "v2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/reactphp-stdio.git",
+                "reference": "5f42a3a5a29f52432f0f68b57890353e8ca65069"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/reactphp-stdio/zipball/5f42a3a5a29f52432f0f68b57890353e8ca65069",
+                "reference": "5f42a3a5a29f52432f0f68b57890353e8ca65069",
+                "shasum": ""
+            },
+            "require": {
+                "clue/term-react": "^1.0 || ^0.1.1",
+                "clue/utf8-react": "^1.0 || ^0.1",
+                "php": ">=5.3",
+                "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3",
+                "react/stream": "^1.0 || ^0.7 || ^0.6"
+            },
+            "require-dev": {
+                "clue/arguments": "^2.0",
+                "clue/commander": "^1.2",
+                "phpunit/phpunit": "^7.0 || ^6.4 || ^5.7 || ^4.8.35"
+            },
+            "suggest": {
+                "ext-mbstring": "Using ext-mbstring should provide slightly better performance for handling I/O"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Clue\\React\\Stdio\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "Async, event-driven console input & output (STDIN, STDOUT) for truly interactive CLI applications, built on top of ReactPHP",
+            "homepage": "https://github.com/clue/reactphp-stdio",
+            "keywords": [
+                "async",
+                "autocomplete",
+                "autocompletion",
+                "cli",
+                "history",
+                "interactive",
+                "reactphp",
+                "readline",
+                "stdin",
+                "stdio",
+                "stdout"
+            ],
+            "time": "2019-08-28T12:01:30+00:00"
+        },
+        {
+            "name": "clue/term-react",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/reactphp-term.git",
+                "reference": "3cec1164073455a85a3f2b3c3fe6db2170d21c2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/reactphp-term/zipball/3cec1164073455a85a3f2b3c3fe6db2170d21c2a",
+                "reference": "3cec1164073455a85a3f2b3c3fe6db2170d21c2a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "react/stream": "^1.0 || ^0.7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0 || ^4.8",
+                "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Clue\\React\\Term\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "Streaming terminal emulator, built on top of ReactPHP",
+            "homepage": "https://github.com/clue/reactphp-term",
+            "keywords": [
+                "C0",
+                "CSI",
+                "ansi",
+                "apc",
+                "ascii",
+                "c1",
+                "control codes",
+                "dps",
+                "osc",
+                "pm",
+                "reactphp",
+                "streaming",
+                "terminal",
+                "vt100",
+                "xterm"
+            ],
+            "time": "2018-07-09T08:20:33+00:00"
+        },
+        {
+            "name": "clue/utf8-react",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/php-utf8-react.git",
+                "reference": "c6111a22e1056627c119233ff5effe00f5d3cc1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/php-utf8-react/zipball/c6111a22e1056627c119233ff5effe00f5d3cc1d",
+                "reference": "c6111a22e1056627c119233ff5effe00f5d3cc1d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "react/stream": "^1.0 || ^0.7 || ^0.6 || ^0.5 || ^0.4 || ^0.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0 || ^4.8",
+                "react/stream": "^1.0 || ^0.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Clue\\React\\Utf8\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "Streaming UTF-8 parser, built on top of ReactPHP",
+            "homepage": "https://github.com/clue/php-utf8-react",
+            "keywords": [
+                "reactphp",
+                "streaming",
+                "unicode",
+                "utf-8",
+                "utf8"
+            ],
+            "time": "2017-07-06T07:43:22+00:00"
+        },
+        {
+            "name": "doctrine/data-fixtures",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/data-fixtures.git",
+                "reference": "39e9777c9089351a468f780b01cffa3cb0a42907"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/39e9777c9089351a468f780b01cffa3cb0a42907",
+                "reference": "39e9777c9089351a468f780b01cffa3cb0a42907",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "^2.11",
+                "doctrine/persistence": "^1.3.3",
+                "php": "^7.2"
+            },
+            "conflict": {
+                "doctrine/phpcr-odm": "<1.3.0"
+            },
+            "require-dev": {
+                "alcaeus/mongo-php-adapter": "^1.1",
+                "doctrine/coding-standard": "^6.0",
+                "doctrine/dbal": "^2.5.4",
+                "doctrine/mongodb-odm": "^1.3.0",
+                "doctrine/orm": "^2.7.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "suggest": {
+                "alcaeus/mongo-php-adapter": "For using MongoDB ODM with PHP 7",
+                "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+                "doctrine/orm": "For loading ORM fixtures",
+                "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\DataFixtures\\": "lib/Doctrine/Common/DataFixtures"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                }
+            ],
+            "description": "Data Fixtures for all Doctrine Object Managers",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database"
+            ],
+            "time": "2020-01-17T11:11:28+00:00"
+        },
+        {
+            "name": "doctrine/doctrine-fixtures-bundle",
+            "version": "3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
+                "reference": "39defca57ee0949e1475c46177b30b6d1b732e8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/39defca57ee0949e1475c46177b30b6d1b732e8f",
+                "reference": "39defca57ee0949e1475c46177b30b6d1b732e8f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "^1.3",
+                "doctrine/doctrine-bundle": "^1.11|^2.0",
+                "doctrine/orm": "^2.6.0",
+                "doctrine/persistence": "^1.3",
+                "php": "^7.1",
+                "symfony/config": "^3.4|^4.3|^5.0",
+                "symfony/console": "^3.4|^4.3|^5.0",
+                "symfony/dependency-injection": "^3.4|^4.3|^5.0",
+                "symfony/doctrine-bridge": "^3.4|^4.1|^5.0",
+                "symfony/http-kernel": "^3.4|^4.3|^5.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^6.0",
+                "phpunit/phpunit": "^7.4",
+                "symfony/phpunit-bridge": "^4.1|^5.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Bundle\\FixturesBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Doctrine Project",
+                    "homepage": "http://www.doctrine-project.org"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DoctrineFixturesBundle",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "Fixture",
+                "persistence"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdoctrine-fixtures-bundle",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-02T16:40:37+00:00"
+        },
+        {
             "name": "easycorp/easy-log-handler",
             "version": "v1.0.9",
             "source": {
@@ -6287,7 +6603,357 @@
                 "monolog",
                 "productivity"
             ],
+            "abandoned": true,
             "time": "2019-10-24T07:13:31+00:00"
+        },
+        {
+            "name": "evenement/evenement",
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igorw/evenement.git",
+                "reference": "531bfb9d15f8aa57454f5f0285b18bec903b8fb7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorw/evenement/zipball/531bfb9d15f8aa57454f5f0285b18bec903b8fb7",
+                "reference": "531bfb9d15f8aa57454f5f0285b18bec903b8fb7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Evenement": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                }
+            ],
+            "description": "Événement is a very simple event dispatching library for PHP",
+            "keywords": [
+                "event-dispatcher",
+                "event-emitter"
+            ],
+            "time": "2017-07-23T21:35:13+00:00"
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "v1.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "squizlabs/php_codesniffer": "^2.9.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2019-12-12T13:22:17+00:00"
+        },
+        {
+            "name": "jolicode/jolinotif",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jolicode/JoliNotif.git",
+                "reference": "b1a7ccfeb13f1daa12a5188531863b739e388e13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jolicode/JoliNotif/zipball/b1a7ccfeb13f1daa12a5188531863b739e388e13",
+                "reference": "b1a7ccfeb13f1daa12a5188531863b739e388e13",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "symfony/process": "^3.3|^4.0|^5.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "symfony/finder": "^3.3|^4.0|^5.0",
+                "symfony/phpunit-bridge": "^3.4.26|^4.0|^5.0"
+            },
+            "bin": [
+                "jolinotif"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Joli\\JoliNotif\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Loïck Piera",
+                    "email": "pyrech@gmail.com"
+                }
+            ],
+            "description": "Send desktop notifications on Windows, Linux, MacOS.",
+            "keywords": [
+                "MAC",
+                "growl",
+                "linux",
+                "notification",
+                "windows"
+            ],
+            "time": "2020-01-10T15:37:00+00:00"
+        },
+        {
+            "name": "liip/test-fixtures-bundle",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liip/LiipTestFixturesBundle.git",
+                "reference": "44f60a776a1f71a1e6800bd9a7e0076b454f35c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liip/LiipTestFixturesBundle/zipball/44f60a776a1f71a1e6800bd9a7e0076b454f35c8",
+                "reference": "44f60a776a1f71a1e6800bd9a7e0076b454f35c8",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "^2.0",
+                "php": "^7.1",
+                "symfony/framework-bundle": "^3.4 || ^4.1 || ^5.0"
+            },
+            "require-dev": {
+                "doctrine/data-fixtures": "^1.3",
+                "doctrine/doctrine-bundle": "^1.8 | ^2.0",
+                "doctrine/doctrine-fixtures-bundle": "^3.0.2",
+                "doctrine/orm": "^2.6",
+                "monolog/monolog": "~1.11 | ^2.0",
+                "phpunit/phpunit": "^7.5 || ^8.0",
+                "symfony/monolog-bridge": ">=3",
+                "symfony/monolog-bundle": "^3.2",
+                "symfony/phpunit-bridge": "^3.4 || ^4.1 || ^5.0",
+                "theofidry/alice-data-fixtures": "^1.0.1"
+            },
+            "suggest": {
+                "doctrine/dbal": "Required when using the fixture loading functionality with an ORM and SQLite",
+                "doctrine/doctrine-fixtures-bundle": "Required when using the fixture loading functionality",
+                "doctrine/orm": "Required when using the fixture loading functionality with an ORM and SQLite",
+                "hautelook/alice-bundle": "Required when using loadFixtureFiles functionality with custom providers",
+                "theofidry/alice-data-fixtures": "Required when using loadFixtureFiles functionality"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liip\\TestFixturesBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Liip AG",
+                    "homepage": "http://www.liip.ch/"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/liip/LiipTestFixturesBundle/contributors"
+                }
+            ],
+            "description": "This bundles enables efficient loading of Doctrine fixtures in functional test-cases for Symfony applications",
+            "keywords": [
+                "fixtures",
+                "symfony",
+                "testing"
+            ],
+            "time": "2020-04-27T10:24:37+00:00"
+        },
+        {
+            "name": "myclabs/deep-copy",
+            "version": "1.9.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myclabs/DeepCopy.git",
+                "reference": "b2c28789e80a97badd14145fda39b545d83ca3ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/b2c28789e80a97badd14145fda39b545d83ca3ef",
+                "reference": "b2c28789e80a97badd14145fda39b545d83ca3ef",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "replace": {
+                "myclabs/deep-copy": "self.version"
+            },
+            "require-dev": {
+                "doctrine/collections": "^1.0",
+                "doctrine/common": "^2.6",
+                "phpunit/phpunit": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DeepCopy\\": "src/DeepCopy/"
+                },
+                "files": [
+                    "src/DeepCopy/deep_copy.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Create deep copies (clones) of your objects",
+            "keywords": [
+                "clone",
+                "copy",
+                "duplicate",
+                "object",
+                "object graph"
+            ],
+            "time": "2020-01-17T21:11:47+00:00"
+        },
+        {
+            "name": "nelmio/alice",
+            "version": "v3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nelmio/alice.git",
+                "reference": "1cfaca8e8c798796b3dfe1f55e4e25dee965ffb6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nelmio/alice/zipball/1cfaca8e8c798796b3dfe1f55e4e25dee965ffb6",
+                "reference": "1cfaca8e8c798796b3dfe1f55e4e25dee965ffb6",
+                "shasum": ""
+            },
+            "require": {
+                "fzaninotto/faker": "^1.6",
+                "myclabs/deep-copy": "^1.5.2",
+                "php": "^7.1",
+                "sebastian/comparator": "^3.0 || ^4.0",
+                "symfony/property-access": "^2.8 || ^3.4 || ^4.0 || ^5.0",
+                "symfony/yaml": "^2.8 || ^3.4 || ^4.0 || ^5.0"
+            },
+            "conflict": {
+                "symfony/framework-bundle": "<3.4"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.1.0",
+                "php-mock/php-mock": "^2.0",
+                "phpspec/prophecy": "^1.6",
+                "phpunit/phpunit": "^7.0 || ^8.5",
+                "symfony/phpunit-bridge": "^3.4.5 || ^4.0.5 || ^5.0",
+                "symfony/var-dumper": "^3.4 || ^4.0 || ^5.0"
+            },
+            "suggest": {
+                "theofidry/alice-data-fixtures": "Wrapper for Alice to provide a persistence layer."
+            },
+            "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false
+                },
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/deep_clone.php"
+                ],
+                "psr-4": {
+                    "Nelmio\\Alice\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be"
+                },
+                {
+                    "name": "Tim Shelburne",
+                    "email": "shelburt02@gmail.com"
+                },
+                {
+                    "name": "Théo FIDRY",
+                    "email": "theo.fidry@gmail.com"
+                }
+            ],
+            "description": "Expressive fixtures generator",
+            "keywords": [
+                "Fixture",
+                "data",
+                "faker",
+                "test"
+            ],
+            "time": "2020-03-08T23:24:35+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -6340,6 +7006,628 @@
                 "php"
             ],
             "time": "2019-11-08T13:50:10+00:00"
+        },
+        {
+            "name": "phpstan/phpstan",
+            "version": "0.12.24",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "823a120fea50b68742b2be2285818202ecce511e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/823a120fea50b68742b2be2285818202ecce511e",
+                "reference": "823a120fea50b68742b2be2285818202ecce511e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.12-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/phpstan",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-10T14:25:55+00:00"
+        },
+        {
+            "name": "phpstan/phpstan-doctrine",
+            "version": "0.12.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan-doctrine.git",
+                "reference": "842047b2496a46dca2c826d9d6ae37ed08593677"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan-doctrine/zipball/842047b2496a46dca2c826d9d6ae37ed08593677",
+                "reference": "842047b2496a46dca2c826d9d6ae37ed08593677",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.1",
+                "phpstan/phpstan": "^0.12.3"
+            },
+            "conflict": {
+                "doctrine/collections": "<1.0",
+                "doctrine/common": "<2.7",
+                "doctrine/mongodb-odm": "<1.2",
+                "doctrine/orm": "<2.5"
+            },
+            "require-dev": {
+                "consistence/coding-standard": "^3.0.1",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+                "doctrine/collections": "^1.0",
+                "doctrine/common": "^2.7",
+                "doctrine/mongodb-odm": "^1.2",
+                "doctrine/orm": "^2.5",
+                "ergebnis/composer-normalize": "^2.0.2",
+                "jakub-onderka/php-parallel-lint": "^1.0",
+                "phing/phing": "^2.16.0",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12",
+                "phpunit/phpunit": "^7.0",
+                "ramsey/uuid-doctrine": "^1.5.0",
+                "slevomat/coding-standard": "^4.5.2"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.12-dev"
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon",
+                        "rules.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Doctrine extensions for PHPStan",
+            "time": "2020-05-08T08:31:05+00:00"
+        },
+        {
+            "name": "phpstan/phpstan-mockery",
+            "version": "0.12.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan-mockery.git",
+                "reference": "120ee84706acc93232b4ee08ec57fb5cdb877f4b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan-mockery/zipball/120ee84706acc93232b4ee08ec57fb5cdb877f4b",
+                "reference": "120ee84706acc93232b4ee08ec57fb5cdb877f4b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.1",
+                "phpstan/phpstan": "^0.12"
+            },
+            "require-dev": {
+                "consistence/coding-standard": "^3.5",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+                "ergebnis/composer-normalize": "^2.0.2",
+                "jakub-onderka/php-parallel-lint": "^1.0",
+                "mockery/mockery": "^1.2.4",
+                "phing/phing": "^2.16.0",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12",
+                "phpunit/phpunit": "^7.2",
+                "slevomat/coding-standard": "^4.7.2",
+                "squizlabs/php_codesniffer": "^3.3.2"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.12-dev"
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan Mockery extension",
+            "time": "2020-04-23T13:49:42+00:00"
+        },
+        {
+            "name": "phpstan/phpstan-phpunit",
+            "version": "0.12.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan-phpunit.git",
+                "reference": "7232c17e2493dc598173da784477ce0afb2c4e0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/7232c17e2493dc598173da784477ce0afb2c4e0e",
+                "reference": "7232c17e2493dc598173da784477ce0afb2c4e0e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.1",
+                "phpstan/phpstan": "^0.12.6"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<7.0"
+            },
+            "require-dev": {
+                "consistence/coding-standard": "^3.5",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+                "ergebnis/composer-normalize": "^2.0.2",
+                "jakub-onderka/php-parallel-lint": "^1.0",
+                "phing/phing": "^2.16.0",
+                "phpstan/phpstan-strict-rules": "^0.12",
+                "phpunit/phpunit": "^7.0",
+                "satooshi/php-coveralls": "^1.0",
+                "slevomat/coding-standard": "^4.7.2"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.12-dev"
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon",
+                        "rules.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPUnit extensions and rules for PHPStan",
+            "time": "2020-04-17T08:04:10+00:00"
+        },
+        {
+            "name": "react/event-loop",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/event-loop.git",
+                "reference": "6d24de090cd59cfc830263cfba965be77b563c13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/6d24de090cd59cfc830263cfba965be77b563c13",
+                "reference": "6d24de090cd59cfc830263cfba965be77b563c13",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0 || ^6.4 || ^5.7 || ^4.8.35"
+            },
+            "suggest": {
+                "ext-event": "~1.0 for ExtEventLoop",
+                "ext-pcntl": "For signal handling support when using the StreamSelectLoop",
+                "ext-uv": "* for ExtUvLoop"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\EventLoop\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "ReactPHP's core reactor event loop that libraries can use for evented I/O.",
+            "keywords": [
+                "asynchronous",
+                "event-loop"
+            ],
+            "time": "2020-01-01T18:39:52+00:00"
+        },
+        {
+            "name": "react/stream",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/stream.git",
+                "reference": "7c02b510ee3f582c810aeccd3a197b9c2f52ff1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/stream/zipball/7c02b510ee3f582c810aeccd3a197b9c2f52ff1a",
+                "reference": "7c02b510ee3f582c810aeccd3a197b9c2f52ff1a",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
+                "php": ">=5.3.8",
+                "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5"
+            },
+            "require-dev": {
+                "clue/stream-filter": "~1.2",
+                "phpunit/phpunit": "^7.0 || ^6.4 || ^5.7 || ^4.8.35"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Stream\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Event-driven readable and writable streams for non-blocking I/O in ReactPHP",
+            "keywords": [
+                "event-driven",
+                "io",
+                "non-blocking",
+                "pipe",
+                "reactphp",
+                "readable",
+                "stream",
+                "writable"
+            ],
+            "time": "2020-05-04T10:17:57+00:00"
+        },
+        {
+            "name": "sebastian/comparator",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/comparator.git",
+                "reference": "85b3435da967696ed618ff745f32be3ff4a2b8e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/85b3435da967696ed618ff745f32be3ff4a2b8e8",
+                "reference": "85b3435da967696ed618ff745f32be3ff4a2b8e8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3",
+                "sebastian/diff": "^4.0",
+                "sebastian/exporter": "^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Volker Dusch",
+                    "email": "github@wallbash.com"
+                },
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@2bepublished.at"
+                }
+            ],
+            "description": "Provides the functionality to compare PHP values for equality",
+            "homepage": "https://github.com/sebastianbergmann/comparator",
+            "keywords": [
+                "comparator",
+                "compare",
+                "equality"
+            ],
+            "time": "2020-02-07T06:08:51+00:00"
+        },
+        {
+            "name": "sebastian/diff",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/diff.git",
+                "reference": "3e523c576f29dacecff309f35e4cc5a5c168e78a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/3e523c576f29dacecff309f35e4cc5a5c168e78a",
+                "reference": "3e523c576f29dacecff309f35e4cc5a5c168e78a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0",
+                "symfony/process": "^4.2 || ^5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Kore Nordmann",
+                    "email": "mail@kore-nordmann.de"
+                }
+            ],
+            "description": "Diff implementation",
+            "homepage": "https://github.com/sebastianbergmann/diff",
+            "keywords": [
+                "diff",
+                "udiff",
+                "unidiff",
+                "unified diff"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-05-08T05:01:12+00:00"
+        },
+        {
+            "name": "sebastian/exporter",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/exporter.git",
+                "reference": "80c26562e964016538f832f305b2286e1ec29566"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/80c26562e964016538f832f305b2286e1ec29566",
+                "reference": "80c26562e964016538f832f305b2286e1ec29566",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3",
+                "sebastian/recursion-context": "^4.0"
+            },
+            "require-dev": {
+                "ext-mbstring": "*",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Volker Dusch",
+                    "email": "github@wallbash.com"
+                },
+                {
+                    "name": "Adam Harvey",
+                    "email": "aharvey@php.net"
+                },
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Provides the functionality to export PHP variables for visualization",
+            "homepage": "http://www.github.com/sebastianbergmann/exporter",
+            "keywords": [
+                "export",
+                "exporter"
+            ],
+            "time": "2020-02-07T06:10:52+00:00"
+        },
+        {
+            "name": "sebastian/recursion-context",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/recursion-context.git",
+                "reference": "cdd86616411fc3062368b720b0425de10bd3d579"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/cdd86616411fc3062368b720b0425de10bd3d579",
+                "reference": "cdd86616411fc3062368b720b0425de10bd3d579",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Adam Harvey",
+                    "email": "aharvey@php.net"
+                }
+            ],
+            "description": "Provides functionality to recursively process PHP variables",
+            "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
+            "time": "2020-02-07T06:18:20+00:00"
+        },
+        {
+            "name": "spatie/phpunit-watcher",
+            "version": "1.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/phpunit-watcher.git",
+                "reference": "dee58ae54d3bc4eccc2b3d7006444f535a693f18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/phpunit-watcher/zipball/dee58ae54d3bc4eccc2b3d7006444f535a693f18",
+                "reference": "dee58ae54d3bc4eccc2b3d7006444f535a693f18",
+                "shasum": ""
+            },
+            "require": {
+                "clue/stdio-react": "^2.0",
+                "jolicode/jolinotif": "^2.0",
+                "php": "^7.2",
+                "symfony/console": "^4.0|^5.0",
+                "symfony/process": "^4.0|^5.0",
+                "symfony/yaml": "^4.0|^5.0",
+                "yosymfony/resource-watcher": "^2.0"
+            },
+            "conflict": {
+                "yosymfony/resource-watcher": "<2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0"
+            },
+            "bin": [
+                "phpunit-watcher"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\PhpUnitWatcher\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Automatically rerun PHPUnit tests when source code changes",
+            "homepage": "https://github.com/spatie/phpunit-watcher",
+            "keywords": [
+                "phpunit-watcher",
+                "spatie"
+            ],
+            "time": "2020-01-04T22:46:42+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -6864,6 +8152,138 @@
             "description": "Symfony WebProfilerBundle",
             "homepage": "https://symfony.com",
             "time": "2020-01-09T12:38:56+00:00"
+        },
+        {
+            "name": "theofidry/alice-data-fixtures",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/theofidry/AliceDataFixtures.git",
+                "reference": "fd84956848b95ece9aafb39865be009212e39bc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/theofidry/AliceDataFixtures/zipball/fd84956848b95ece9aafb39865be009212e39bc7",
+                "reference": "fd84956848b95ece9aafb39865be009212e39bc7",
+                "shasum": ""
+            },
+            "require": {
+                "nelmio/alice": "^3.1",
+                "php": "^7.1",
+                "psr/log": "^1.0"
+            },
+            "conflict": {
+                "doctrine/orm": "<2.5",
+                "illuminate/database": "<5.5",
+                "ocramius/proxy-manager": "<2.1",
+                "symfony/framework-bundle": "<3.4"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.1",
+                "phpspec/prophecy": "^1.7",
+                "phpunit/phpunit": "^6.0",
+                "symfony/phpunit-bridge": "^3.3.2 || ^4.0"
+            },
+            "suggest": {
+                "alcaeus/mongo-php-adapter": "To use Doctrine with the MongoDB flavour",
+                "doctrine/data-fixtures": "To use Doctrine",
+                "doctrine/dbal": "To use Doctrine with the PHPCR flavour",
+                "doctrine/mongodb": "To use Doctrine with the MongoDB flavour",
+                "doctrine/mongodb-odm": "To use Doctrine with the MongoDB flavour",
+                "doctrine/orm": "To use Doctrine ORM",
+                "doctrine/phpcr-odm": "To use Doctrine with the PHPCR flavour",
+                "illuminate/database": "To use Eloquent",
+                "jackalope/jackalope-doctrine-dbal": "To use Doctrine with the PHPCR flavour",
+                "ocramius/proxy-manager": "To avoid database connection on kernel boot"
+            },
+            "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false
+                },
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fidry\\AliceDataFixtures\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Théo FIDRY",
+                    "email": "theo.fidry@gmail.com",
+                    "homepage": "https://github.com/theofidry"
+                }
+            ],
+            "description": "Nelmio alice extension to persist the loaded fixtures.",
+            "keywords": [
+                "Fixture",
+                "alice",
+                "data",
+                "faker",
+                "orm",
+                "tests"
+            ],
+            "time": "2019-12-01T12:31:52+00:00"
+        },
+        {
+            "name": "yosymfony/resource-watcher",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yosymfony/resource-watcher.git",
+                "reference": "a8c34f704e6bd4f786c97f3c0ba65bd86cb2bd73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yosymfony/resource-watcher/zipball/a8c34f704e6bd4f786c97f3c0ba65bd86cb2bd73",
+                "reference": "a8c34f704e6bd4f786c97f3c0ba65bd86cb2bd73",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "symfony/finder": "^2.7|^3.0|^4.0|^5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "symfony/filesystem": "^2.7|^3.0|^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yosymfony\\ResourceWatcher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Victor Puertas",
+                    "email": "vpgugr@gmail.com"
+                }
+            ],
+            "description": "A simple resource watcher using Symfony Finder",
+            "homepage": "http://yosymfony.com",
+            "keywords": [
+                "finder",
+                "resources",
+                "symfony",
+                "watcher"
+            ],
+            "time": "2020-01-04T15:36:55+00:00"
         }
     ],
     "aliases": [],
@@ -6872,13 +8292,13 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2.5",
+        "php": "^7.4",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.3.12"
+        "php": "7.4"
     },
     "plugin-api-version": "1.1.0"
 }

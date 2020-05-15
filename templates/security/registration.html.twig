@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription :: Tripway{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('form') }}
+    {{ encore_entry_script_tags('PasswordValidator') }}
+{% endblock %}
+
+{% block body %}
+    <main class="sign">
+        <section class="container">
+            <h1 class="subtitle">Créer un compte sur Tripway</h1>
+
+            {% if errors|length > 0 %}
+                <div class="alert alert--danger">
+                    {%- for error in errors -%}
+                        <p>{{ error.message }}</p>
+                    {%- endfor -%}
+                </div>
+            {% endif %}
+
+            {{ form_start(formUser, {attr:{'autocomplete': 'off'}}) }}
+            <h2 class="subtitle--form">Information personnelle&nbsp;:</h2>
+            <div class="form__group">
+                <div class="form__input">
+                    {{ form_row(formUser.firstname, {'label': 'Prénom'}) }}
+                </div>
+
+                <div class="form__input">
+                    {{ form_row(formUser.lastname, {'label': 'Nom'}) }}
+                </div>
+            </div>
+            <h2 class="subtitle--form">Information de connexion&nbsp;:</h2>
+            <div class="form__group">
+                <div class="form__input">
+                    {{ form_row(formUser.email, {'label': 'Adresse e-mail', attr:{'autocomplete': 'false'}}) }}
+                </div>
+
+                <div class="form__input">
+                    {{ form_row(formUser.password, {'label': 'Mot de passe', attr:{'autocomplete': 'false'}}) }}
+                </div>
+
+                <div class="form__input">
+                    {{ form_row(formUser.confirm_password, {'label': 'Confirmer le mot de passe'}) }}
+                </div>
+
+                <ul class="password_point">
+                    <li><small>Votre mot de passe doit contenir au moins:</small></li>
+                    <li class="check check-minChars"><small>- 8 caractères</small></li>
+                    <li class="check check-uppercase"><small>- 1 majuscule</small></li>
+                    <li class="check check-digit"><small>- 1 chiffre</small></li>
+                    <li class="check check-special"><small>- 1 caractère spéciale</small></li>
+                </ul>
+            </div>
+
+            <h2 class="subtitle--form">Légal&nbsp;:</h2>
+            <div class="form__group">
+                <label for="registration_opt_in" class="checkbox">
+                    {{ form_widget(formUser.opt_in) }}
+                    <small>J'accepte de recevoir des mails de la part de Tripway.</small>
+                </label>
+
+                <p><small>En créant un compte sur Tripway, vous acceptez ses conditions d'utilisation! </small></p>
+            </div>
+
+            <button class="btn btn--primary" type="submit" disabled>
+                Créer mon compte
+            </button>
+            {{ form_end(formUser) }}
+        </section>
+    </main>
+
+{% endblock %}
