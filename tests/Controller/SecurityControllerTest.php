@@ -26,6 +26,7 @@ class SecurityControllerTest extends WebTestCase
 
     public function testLoginWithBadCredentials() {
         $client = static::createClient();
+        $this->loadFixtureFiles([dirname(__DIR__, 1). '/DataFixturesTest/users.yml']);
         $crawler = $client->request('GET', '/login');
         $form = $crawler->selectButton('Se connecter')->form([
             'email' => 'test@test.be',
