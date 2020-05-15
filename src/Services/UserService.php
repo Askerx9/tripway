@@ -8,12 +8,18 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class UserService
 {
+    private EntityManagerInterface $em;
 
-    public function UpdateLastLogin (User $user, EntityManagerInterface $em) : void
+    function __construct( EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
+
+    public function UpdateLastLogin (User $user) : void
     {
         $user->setLastSignAt(new \DateTime());
-        $this->$em->persist($user);
-        $this->$em->flush();
+        $this->em->persist($user);
+        $this->em->flush();
     }
 
 }

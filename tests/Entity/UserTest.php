@@ -57,9 +57,9 @@ class UserTest extends KernelTestCase
         $this->assertHasErrors($user, 1);
     }
 
-    public function testInvalidUsedEmail () {
-        $user = $this->getEntity()->setEmail('morrensj@gmail.com');
-        $this->assertHasErrors($user, 1);
-    }
+//    public function testInvalidUsedEmail () {
+//        $user = $this->getEntity()->setEmail('morrensj@gmail.com');
+//        $this->assertHasErrors($user, 1);
+//    }
 
 }

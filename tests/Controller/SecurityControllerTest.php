@@ -36,7 +36,7 @@ class SecurityControllerTest extends WebTestCase
         $client->followRedirect();
     }
 
-    public function testSuccessfullLogin() {
+    public function testSuccessFullLogin() {
         $client = static::createClient();
         $this->loadFixtureFiles([__DIR__.'/users.yml']);
         $crawler = $client->request('GET', '/login');

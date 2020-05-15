@@ -102,7 +102,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
             return new RedirectResponse($targetPath);
         }
        if ($this->user instanceof  User) {
-            $this->userService->UpdateLastLogin($this->user, $this->entityManager);
+            $this->userService->UpdateLastLogin($this->user);
        }
 //        TODO: Renvoyer vers la page précedente!
         return new RedirectResponse($this->urlGenerator->generate('profile_index'));
