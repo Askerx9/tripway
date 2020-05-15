@@ -32,7 +32,7 @@ class UserFixtures extends Fixture
             ->setLastname($faker->lastName)
             ->setPassword($this->passwordEncoder->encodePassword(
             $user,
-            'test'
+            'Fak3password!'
         ));
 
         $manager->persist($user);
