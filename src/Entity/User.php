@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use DateTime;
 use DateTimeInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -27,7 +29,7 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=180, unique=true)
      * @Assert\Email()
      */
-    private string $email;
+    private string $email = '';
 
     /**
      * @ORM\Column(type="json")
@@ -41,22 +43,22 @@ class User implements UserInterface
      * @Assert\Length(min="8", minMessage="Votre mot de passe doit faire minimum 8 caractères")
      * @Assert\Regex(pattern = "/^\S*(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W|_])\S*$/", message="Votre mot de passe doit contenir au moins : 1 majuscule, 1 chiffre et 1 caractère spécial")
      */
-    private string $password;
+    private string $password = '';
 
     /**
      * @Assert\EqualTo(propertyPath="password", message="les mots de passes ne sont pas identiques")
      */
-    private string $confirm_password;
+    private string $confirm_password = '';
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $firstname;
+    private string $firstname = '';
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $lastname;
+    private string $lastname = '';
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -81,16 +83,22 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="boolean")
      */
-    private bool $opt_in;
+    private bool $opt_in = false;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private ?\DateTimeInterface $validate_at;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Planning::class, mappedBy="user_id", orphanRemoval=true)
+     */
+    private $plannings;
+
     public function __construct()
     {
         $this->setCreatedAt( new DateTime());
+        $this->plannings = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -276,6 +284,37 @@ class User implements UserInterface
     public function setValidateAt(?\DateTimeInterface $validate_at): self
     {
         $this->validate_at = $validate_at;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Planning[]
+     */
+    public function getPlannings(): Collection
+    {
+        return $this->plannings;
+    }
+
+    public function addPlanning(Planning $planning): self
+    {
+        if (!$this->plannings->contains($planning)) {
+            $this->plannings[] = $planning;
+            $planning->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removePlanning(Planning $planning): self
+    {
+        if ($this->plannings->contains($planning)) {
+            $this->plannings->removeElement($planning);
+            // set the owning side to null (unless already changed)
+            if ($planning->getUserId() === $this) {
+                $planning->setUserId(null);
+            }
+        }
 
         return $this;
     }

@@ -43,23 +43,23 @@ class SecurityController extends AbstractController
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()) {
-
-            $hash = $encoder->encodePassword($user, $user->getPassword());
-            $user->setPassword($hash);
-
-            $manager->persist($user);
-            $manager->flush();
-
-            $this->addFlash(
-                'success',
-                'Votre compte a bien été créé!'
-            );
-
-            // TODO: Confirmation par mail
-
-            return $this->redirectToRoute('app_login');
-        }
+//        if($form->isSubmitted() && $form->isValid()) {
+//
+//            $hash = $encoder->encodePassword($user, $user->getPassword());
+//            $user->setPassword($hash);
+//
+//            $manager->persist($user);
+//            $manager->flush();
+//
+//            $this->addFlash(
+//                'success',
+//                'Votre compte a bien été créé!'
+//            );
+//
+//            // TODO: Confirmation par mail
+//
+//            return $this->redirectToRoute('app_login');
+//        }
 
         return $this->render('security/registration.html.twig', [
             'formUser' => $form->createView(),

@@ -4,6 +4,11 @@
     Tes plannings - Tripway
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('planning') }}
+{% endblock %}
+
 {% block header %}
     <section class="header__content header__content--profile">
         <h2 class="title">Hello,<br><span class="bold">{{ user.firstname }}</span></h2>
@@ -11,23 +16,23 @@
 {% endblock %}
 
 {% block body %}
-    <main class="profile">
-        <section class="container">
-            <h1 class="subtitle subtitle--color">Tes plannings</h1>
-            <ul class="planning">
-                <li class="planning__el">
-                    <h3 class="subtitle">Sri lanka</h3>
-                    <p class="planning__description">2 semaines</p>
+    <main class="profile" id="app">
+{#        <section class="container">#}
+{#            #}
+{#            <ul class="planning">#}
+{#                <li class="planning__el">#}
+{#                    <h3 class="subtitle">Sri lanka</h3>#}
+{#                    <p class="planning__description">2 semaines</p>#}
 
-                    <div class="planning-card">
-                        <div class="planning-card__footer">
-                            <p class="planning-card__info planning-card__info--activity">7 villes</p>
-                            <p class="planning-card__info planning-card__info--person">2 pers</p>
-                            <p class="planning-card__info planning-card__info--budget">2000€</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
+{#                    <div class="planning-card">#}
+{#                        <div class="planning-card__footer">#}
+{#                            <p class="planning-card__info planning-card__info--activity">7 villes</p>#}
+{#                            <p class="planning-card__info planning-card__info--person">2 pers</p>#}
+{#                            <p class="planning-card__info planning-card__info--budget">2000€</p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </section>#}
     </main>
 {% endblock %}

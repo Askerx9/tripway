@@ -10,10 +10,12 @@ use Faker;
 
 class UserFixtures extends Fixture
 {
+
+    public const USER_REFERENCE = 'user';
+
     /**
      * @var UserPasswordEncoderInterface
      */
-
     private $passwordEncoder;
 
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
@@ -27,7 +29,7 @@ class UserFixtures extends Fixture
 
         $user = new User();
 
-        $user->setEmail($faker->email)
+        $user->setEmail("test@test.be")
             ->setFirstname($faker->firstName())
             ->setLastname($faker->lastName)
             ->setPassword($this->passwordEncoder->encodePassword(
@@ -37,5 +39,8 @@ class UserFixtures extends Fixture
 
         $manager->persist($user);
         $manager->flush();
+
+        $this->addReference(self::USER_REFERENCE, $user);
     }
+
 }

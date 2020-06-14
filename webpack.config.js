@@ -22,6 +22,7 @@ Encore
     .addEntry('app', './assets/js/app.js')
     .addEntry('form', './assets/js/form.js')
     .addEntry('PasswordValidator', './assets/js/PasswordValidator.js')
+    .addEntry('planning', './assets/js/planning.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
@@ -70,7 +71,7 @@ Encore
     //.autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer req api-admin)
-    //.enableReactPreset()
+    .enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
 ;
 
