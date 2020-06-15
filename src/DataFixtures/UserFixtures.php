@@ -27,20 +27,25 @@ class UserFixtures extends Fixture
     {
         $faker = Faker\Factory::create('fr_FR');
 
-        $user = new User();
+        for ($i = 0; $i < 3; $i++) {
+            $user = new User();
 
-        $user->setEmail("test@test.be")
-            ->setFirstname($faker->firstName())
-            ->setLastname($faker->lastName)
-            ->setPassword($this->passwordEncoder->encodePassword(
-            $user,
-            'Fak3password!'
-        ));
+            $email = $i === 0 ? "test@test.be" : $faker->email;
 
-        $manager->persist($user);
+            $user->setEmail($email)
+                ->setFirstname($faker->firstName())
+                ->setLastname($faker->lastName)
+                ->setPassword($this->passwordEncoder->encodePassword(
+                    $user,
+                    'Fak3password!'
+                ));
+
+            $this->addReference("user_" . $i, $user);
+            $manager->persist($user);
+        }
         $manager->flush();
 
-        $this->addReference(self::USER_REFERENCE, $user);
+
     }
 
 }

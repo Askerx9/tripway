@@ -1,14 +1,18 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {PlanningCard} from "./PlanningCard";
-
-const plannings = [
-    {id:1,name:'Japon', slug:'1234', country:'Japon', days_count: 14, start_at:'', finish_at:'' },
-    {id:2,name:'Belgique', slug:'1234', country:'Belgique', days_count: 7, start_at:'', finish_at:'' },
-    {id:3,name:'Mexique', slug:'1234', country:'Mexique', days_count: 23, start_at:'', finish_at:'' },
-    ]
-
+import {apiFetch} from "../../utils/api";
 
 export const PlanningsShow = function () {
+
+    const [plannings, setPlannings] = useState([])
+    
+    useEffect(function () {
+        (async function () {
+            const plannings = await apiFetch('GET', '/plannings')
+            console.log(plannings)
+            setPlannings(plannings)
+        }())
+    }, [])
 
     return (
         <section className={'container'}>

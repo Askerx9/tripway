@@ -9,5 +9,6 @@ parameters:
     - src
   excludes_analyse:
     - src/Migrations/*
+    - src/DataFixtures/*
   checkMissingIterableValueType: false
   checkGenericClassInNonGenericObjectType: false

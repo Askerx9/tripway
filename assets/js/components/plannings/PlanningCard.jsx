@@ -10,7 +10,7 @@ export const PlanningCard = function ({planning}) {
                 <div>
                     <h3 className="planning-card__title">
                         <span>{planning.name}</span> <br />
-                        <span>Planning {DaysToWeek(planning.days_count)} semaines</span>
+                        <span>Planning {DaysToWeek(planning.daysCount)} semaines</span>
                     </h3>
                     <p className="planning-card__country">
                         {planning.country}

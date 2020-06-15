@@ -1,0 +1,1 @@
+export const API_URL = "http://tripway.localhost:8000/api";
