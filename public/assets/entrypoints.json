@@ -20,6 +20,12 @@
         "http://tripway.localhost:8080/assets/runtime.js",
         "http://tripway.localhost:8080/assets/PasswordValidator.js"
       ]
+    },
+    "planning": {
+      "js": [
+        "http://tripway.localhost:8080/assets/runtime.js",
+        "http://tripway.localhost:8080/assets/planning.js"
+      ]
     }
   }
 }

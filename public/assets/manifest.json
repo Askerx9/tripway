@@ -3,6 +3,7 @@
   "assets/app.css": "http://tripway.localhost:8080/assets/app.css",
   "assets/app.js": "http://tripway.localhost:8080/assets/app.js",
   "assets/form.js": "http://tripway.localhost:8080/assets/form.js",
+  "assets/planning.js": "http://tripway.localhost:8080/assets/planning.js",
   "assets/runtime.js": "http://tripway.localhost:8080/assets/runtime.js",
   "assets/images/background_header_home.jpg": "http://tripway.localhost:8080/assets/images/background_header_home.c9e47f45.jpg",
   "assets/images/bg.png": "http://tripway.localhost:8080/assets/images/bg.a8a05cfc.png",
