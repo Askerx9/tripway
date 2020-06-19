@@ -1,26 +1,36 @@
-import React, {useState, useEffect} from "react";
-import {PlanningCard} from "./PlanningCard";
-import {apiFetch} from "../../utils/api";
+import React from "react";
+import {PlanningCard, PlanningCardLoading} from "./PlanningCard";
+import {Fetch} from "../Fetch";
+
+
+export const PlanningsList = function ({plannings}) {
+    return plannings.map(planning => <li className="planning__el" key={planning.id}><PlanningCard planning={planning} /></li>)
+}
+
+const LoadingCard = function () {
+    return <>
+        <li className="planning__el planning__el--fake">
+            <PlanningCardLoading />
+        </li>
+        <li className="planning__el planning__el--fake">
+            <PlanningCardLoading />
+        </li>
+        <li className="planning__el planning__el--fake">
+            <PlanningCardLoading />
+        </li>
+    </>
+}
 
 export const PlanningsShow = function () {
-
-    const [plannings, setPlannings] = useState([])
-    
-    useEffect(function () {
-        (async function () {
-            const plannings = await apiFetch('GET', '/plannings')
-            console.log(plannings)
-            setPlannings(plannings)
-        }())
-    }, [])
 
     return (
         <section className={'container'}>
             <h1 className="subtitle subtitle--color">Tes plannings</h1>
             <ul className="planning">
-                {plannings.map(planning => <li className="planning__el" key={planning.id}><PlanningCard planning={planning} /></li>)}
+                <Fetch method="get" endpoint="/plannings" loader={<LoadingCard />}>
+                    {({data: plannings}) => <PlanningsList plannings={plannings} />}
+                </Fetch>
             </ul>
         </section>
     )
-
 }

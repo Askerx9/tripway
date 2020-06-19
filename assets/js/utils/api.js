@@ -4,7 +4,6 @@ import {API_URL} from "../config";
  *
  * @param {string} method
  * @param {string} endpoint
- * @param {object} options
  * @returns {Promise<void>}
  */
 export async function apiFetch(method, endpoint, options) {

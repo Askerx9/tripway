@@ -1,5 +1,12 @@
 .planning__el {
   margin-bottom: space(7);
+  opacity: 0;
+  animation: isLoading 1.5s cubic-bezier(0,.86,.7,.99) forwards, Alpha .4s .3s ease-in-out forwards;
+  @for $i from 1 through 50 {
+    &:nth-child(#{$i}) {
+      animation-delay: 300ms * $i;
+    }
+  }
 }
 
 .planning__description{
@@ -10,11 +17,25 @@
 .planning-card {
   width: 100%;
   min-height: 180px;
-  padding: em(32, 18) em(32, 18);
-  border-radius: 40px;
+  padding: em(28, 18);
+  border-radius: 20px;
   display: inline-block;
-  @include background(url(../../images/planning-card/bg.png), $size: cover);
+  //@include background(url(../../images/planning-card/bg.png), $size: cover);
+  background-size: cover;
   position: relative;
+}
+.planning-card:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #031229, rgba(#031229, 0));
+  opacity: .7;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .planning-card:after {
   content: '';
@@ -29,12 +50,17 @@
   color: #fff;
 }
 .planning-card__title {
+  margin-bottom: space(.5);
   font-size: em(15);
+  z-index: 100;
+  position: relative;
 }
 .planning-card__country {
   text-transform: uppercase;
   font-size: em(10);
-  color: #C5C5C5;
+  color: darken(#ffffff, 10);
+  z-index: 100;
+  position: relative;
 }
 .planning-card__action {
   @include flex($direction: column);
@@ -90,4 +116,47 @@
 }
 .planning-card__info--budget:before{
   @include replace-text(url(../../images/planning-card/price.svg));
+}
+
+// LOADING CARD
+.planning__el--fake {
+  animation: Alpha 1.5s 0s ease-in-out infinite alternate;
+  &:nth-child(2) {
+    animation-delay: .75s;
+  }
+}
+.planning__el--fake a{
+  background: #e0e0e0;
+}
+.planning__el--fake a:after,
+.planning__el--fake a:before{
+  display: none;
+}
+.planning__el--fake .planning-card__title span{
+  width: 100px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+  background: darken(#e0e0e0, 10);;
+}
+.planning__el--fake .planning-card__info{
+  width: 30%;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+  background: darken(#e0e0e0, 5);
+}
+.planning__el--fake .planning-card__info:before{
+  display: none;
+}
+
+//ANIMTAIONS
+@keyframes Alpha {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes isLoading {
+  from{transform: translateY(30px) scale(1.2)}
+  to{transform: translateY(0px) scale(1)}
 }
