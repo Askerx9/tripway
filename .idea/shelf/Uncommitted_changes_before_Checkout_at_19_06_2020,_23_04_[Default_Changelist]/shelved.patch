@@ -1,0 +1,40 @@
+Index: public/assets/entrypoints.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"entrypoints\": {\n    \"app\": {\n      \"js\": [\n        \"http://tripway.localhost:8080/assets/runtime.js\",\n        \"http://tripway.localhost:8080/assets/app.js\"\n      ],\n      \"css\": [\n        \"http://tripway.localhost:8080/assets/app.css\"\n      ]\n    },\n    \"form\": {\n      \"js\": [\n        \"http://tripway.localhost:8080/assets/runtime.js\",\n        \"http://tripway.localhost:8080/assets/form.js\"\n      ]\n    },\n    \"PasswordValidator\": {\n      \"js\": [\n        \"http://tripway.localhost:8080/assets/runtime.js\",\n        \"http://tripway.localhost:8080/assets/PasswordValidator.js\"\n      ]\n    }\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- public/assets/entrypoints.json	(revision b48f5fdcd01fdf8d520640eda4e1a9bdf9f545f8)
++++ public/assets/entrypoints.json	(date 1592600678700)
+@@ -20,6 +20,12 @@
+         "http://tripway.localhost:8080/assets/runtime.js",
+         "http://tripway.localhost:8080/assets/PasswordValidator.js"
+       ]
++    },
++    "planning": {
++      "js": [
++        "http://tripway.localhost:8080/assets/runtime.js",
++        "http://tripway.localhost:8080/assets/planning.js"
++      ]
+     }
+   }
+ }
+\ No newline at end of file
+Index: public/assets/manifest.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"assets/PasswordValidator.js\": \"http://tripway.localhost:8080/assets/PasswordValidator.js\",\n  \"assets/app.css\": \"http://tripway.localhost:8080/assets/app.css\",\n  \"assets/app.js\": \"http://tripway.localhost:8080/assets/app.js\",\n  \"assets/form.js\": \"http://tripway.localhost:8080/assets/form.js\",\n  \"assets/runtime.js\": \"http://tripway.localhost:8080/assets/runtime.js\",\n  \"assets/images/background_header_home.jpg\": \"http://tripway.localhost:8080/assets/images/background_header_home.c9e47f45.jpg\",\n  \"assets/images/bg.png\": \"http://tripway.localhost:8080/assets/images/bg.a8a05cfc.png\",\n  \"assets/images/bg_mask@2x.jpg\": \"http://tripway.localhost:8080/assets/images/bg_mask@2x.65078b01.jpg\",\n  \"assets/images/heart-fill.svg\": \"http://tripway.localhost:8080/assets/images/heart-fill.e1c264e2.svg\",\n  \"assets/images/hearts.svg\": \"http://tripway.localhost:8080/assets/images/hearts.26f31c36.svg\",\n  \"assets/images/person.svg\": \"http://tripway.localhost:8080/assets/images/person.cb792b2d.svg\",\n  \"assets/images/price.svg\": \"http://tripway.localhost:8080/assets/images/price.ea89accf.svg\",\n  \"assets/images/save.svg\": \"http://tripway.localhost:8080/assets/images/save.5d888fbe.svg\",\n  \"assets/images/start.svg\": \"http://tripway.localhost:8080/assets/images/start.21a96967.svg\",\n  \"assets/images/tripway_logo.svg\": \"http://tripway.localhost:8080/assets/images/tripway_logo.aee0ffbc.svg\"\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- public/assets/manifest.json	(revision b48f5fdcd01fdf8d520640eda4e1a9bdf9f545f8)
++++ public/assets/manifest.json	(date 1592600679732)
+@@ -3,6 +3,7 @@
+   "assets/app.css": "http://tripway.localhost:8080/assets/app.css",
+   "assets/app.js": "http://tripway.localhost:8080/assets/app.js",
+   "assets/form.js": "http://tripway.localhost:8080/assets/form.js",
++  "assets/planning.js": "http://tripway.localhost:8080/assets/planning.js",
+   "assets/runtime.js": "http://tripway.localhost:8080/assets/runtime.js",
+   "assets/images/background_header_home.jpg": "http://tripway.localhost:8080/assets/images/background_header_home.c9e47f45.jpg",
+   "assets/images/bg.png": "http://tripway.localhost:8080/assets/images/bg.a8a05cfc.png",
