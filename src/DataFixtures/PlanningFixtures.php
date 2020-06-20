@@ -22,6 +22,7 @@ class PlanningFixtures extends Fixture implements DependentFixtureInterface
                 ->setFinishAt($faker->dateTimeBetween("now", "+40 days"))
                 ->setDaysCount((int) $planning->getFinishAt()->diff($startDate)->format("%a"))
                 ->setImageName($faker->imageUrl(300, 180, 'city'))
+                ->setPeople(rand(1, 20))
                 ->setUser($this->getReference("user_" . rand(0, 2)));
             // $product = new Product();
             $manager->persist($planning);

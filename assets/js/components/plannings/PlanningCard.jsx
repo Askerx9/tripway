@@ -22,7 +22,7 @@ export const PlanningCard = function ({planning}) {
 
                 <ul className="planning-card__footer">
                     <li className="planning-card__info planning-card__info--activity">7 villes</li>
-                    <li className="planning-card__info planning-card__info--person">2 pers</li>
+                    <li className="planning-card__info planning-card__info--person">{planning.people} pers</li>
                     <li className="planning-card__info planning-card__info--budget">2000€</li>
                 </ul>
             </div>

@@ -87,6 +87,12 @@ class Planning
      */
     private \DateTimeInterface $createdAt;
 
+    /**
+     * @ORM\Column(type="integer")
+     * @Groups({"read:planning"})
+     */
+    private int $people;
+
     public function __construct()
     {
         $this->setCreatedAt( new \DateTime());
@@ -214,6 +220,18 @@ class Planning
     public function setImageName(?string $imageName): Planning
     {
         $this->imageName = $imageName;
+        return $this;
+    }
+
+    public function getPeople(): ?int
+    {
+        return $this->people;
+    }
+
+    public function setPeople(int $people): self
+    {
+        $this->people = $people;
+
         return $this;
     }
 

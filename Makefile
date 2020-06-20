@@ -46,6 +46,10 @@ migration: vendor/autoload.php ## Génère les migrations
 migrate: vendor/autoload.php ## Migre la base de données (docker-compose up doit être lancé)
 	$(sy) doctrine:migrations:migrate -q
 
+.PHONY: fixtures
+fixtures: vendor/autoload.php ## Création de fausses data dans la base de données
+	$(sy) doctrine:fixtures:load
+
 .PHONY: rollback
 rollback:
 	$(sy) doctrine:migration:migrate prev
