@@ -29,7 +29,6 @@ class UserFixtures extends Fixture
 
         for ($i = 0; $i < 3; $i++) {
             $user = new User();
-
             $email = $i === 0 ? "test@test.be" : $faker->email;
 
             $user->setEmail($email)

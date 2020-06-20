@@ -26,6 +26,7 @@ class PlanningFixtures extends Fixture implements DependentFixtureInterface
                 ->setUser($this->getReference("user_" . rand(0, 2)));
             // $product = new Product();
             $manager->persist($planning);
+            $this->addReference("planning_" . $i, $planning);
         }
         $manager->flush();
     }

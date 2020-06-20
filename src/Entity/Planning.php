@@ -6,6 +6,8 @@ use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Repository\PlanningRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -93,9 +95,15 @@ class Planning
      */
     private int $people;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Activity::class, mappedBy="planning", orphanRemoval=true)
+     */
+    private Collection $activity;
+
     public function __construct()
     {
         $this->setCreatedAt( new \DateTime());
+        $this->activity = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -231,6 +239,37 @@ class Planning
     public function setPeople(int $people): self
     {
         $this->people = $people;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Activity[]
+     */
+    public function getActivity(): Collection
+    {
+        return $this->activity;
+    }
+
+    public function addActivity(Activity $Activity): self
+    {
+        if (!$this->activity->contains($Activity)) {
+            $this->activity[] = $Activity;
+            $Activity->setPlanning($this);
+        }
+
+        return $this;
+    }
+
+    public function removeActivity(Activity $Activity): self
+    {
+        if ($this->activity->contains($Activity)) {
+            $this->activity->removeElement($Activity);
+            // set the owning side to null (unless already changed)
+            if ($Activity->getPlanning() === $this) {
+                $Activity->setPlanning(null);
+            }
+        }
 
         return $this;
     }
