@@ -1,3 +1,5 @@
+import pluralize from "./Pluralize";
+
 /**
  * @param {integer} days
  * @returns {number}
@@ -14,10 +16,12 @@ export const DaysToWeek = function (days) {
 export function DaysCount(days) {
     if (days > 7) {
         const weeks = DaysToWeek(days);
-        return `${weeks} semaine${weeks > 1 ? "s" : ""}`
+        return weeks+ " " + pluralize('semaine', weeks)
+        // return `${weeks} semaine${weeks > 1 ? "s" : ""}`
     }
     else {
-        return `${days} jour${days > 1 ? "s" : ""}`
+        return days + " " + pluralize('jour', days)
+        // return `${days} jour${days > 1 ? "s" : ""}`
     }
 
 }

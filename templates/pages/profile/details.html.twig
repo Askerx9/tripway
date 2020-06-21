@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{planning.name}} - Tripway
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        window.PLANNING_DETAILS_ID = {{ planning.id | json_encode }}
+    </script>
+    {{ encore_entry_script_tags('planning_details') }}
+{% endblock %}
+
+{% block header %}
+    <section class="header__content header__content--profile">
+        <h2 class="title">Planning<br><span class="bold">{{ planning.name }}</span></h2>
+    </section>
+{% endblock %}
+
+{% block body %}
+    <main class="profile" id="app">
+        {#        <section class="container">#}
+        {#            #}
+        {#            <ul class="planning">#}
+        {#                <li class="planning__el">#}
+        {#                    <h3 class="subtitle">Sri lanka</h3>#}
+        {#                    <p class="planning__description">2 semaines</p>#}
+
+        {#                    <div class="planning-card">#}
+        {#                        <div class="planning-card__footer">#}
+        {#                            <p class="planning-card__info planning-card__info--activity">7 villes</p>#}
+        {#                            <p class="planning-card__info planning-card__info--person">2 pers</p>#}
+        {#                            <p class="planning-card__info planning-card__info--budget">2000€</p>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                </li>#}
+        {#            </ul>#}
+        {#        </section>#}
+    </main>
+{% endblock %}

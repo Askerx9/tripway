@@ -2,9 +2,8 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
-use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Repository\PlanningRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -20,10 +19,13 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ApiResource(
  *     attributes={"order"={"createdAt":"DESC"}},
  *     normalizationContext={"groups"={"read:planning"}},
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
+ *     collectionOperations={ "get" },
+ *     itemOperations={
+ *          "get" = {
+ *              "normalization_context"= {"groups"={"read:planning", "read:full:planning"}}
+ *          }
+ *      }
  * )
-// * @ApiFilter(SearchFilter::class, properties={"user": "exact"})
  */
 class Planning
 {
@@ -50,11 +52,13 @@ class Planning
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"read:full:planning"})
      */
     private \DateTimeInterface $start_at;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"read:full:planning"})
      */
     private \DateTimeInterface $finish_at;
 
@@ -97,6 +101,7 @@ class Planning
 
     /**
      * @ORM\OneToMany(targetEntity=Activity::class, mappedBy="planning", orphanRemoval=true)
+     * @Groups({"read:planning"})
      */
     private Collection $activity;
 

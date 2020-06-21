@@ -24,7 +24,7 @@ class ActivityFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Faker\Factory::create('fr_FR');
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 75; $i++) {
             $planning = $this->getReference("planning_" . rand(0, 19));
             $activity = new Activity();
             $activity->setName($faker->company)
@@ -32,8 +32,8 @@ class ActivityFixtures extends Fixture implements DependentFixtureInterface
                 ->setPosition(1)
                 ->setAddress($faker->address)
                 ->setType('plane')
-                ->setType($faker->text(150))
-                ->setPrice($faker->randomNumber(2))
+                ->setDescription($faker->text(150))
+                ->setPrice($faker->randomFloat(2, $min = 0, $max = 1500))
                 ->setStartAt($faker->dateTimeBetween($planning->getStartAt(), $planning->getFinishAt()))
                 ->setPlanning($planning);
 

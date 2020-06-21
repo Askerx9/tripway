@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ActivityRepository;
 use Doctrine\ORM\Mapping as ORM;
-use phpDocumentor\Reflection\Types\Boolean;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=ActivityRepository::class)
@@ -35,26 +35,31 @@ class Activity
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"read:full:planning"})
      */
     private string $name="";
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"read:full:planning"})
      */
     private string $address = "";
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"read:full:planning"})
      */
     private string $description = "";
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"read:full:planning"})
      */
     private \DateTimeInterface $startAt;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups({"read:planning"})
      */
     private float $price;
 
@@ -156,7 +161,7 @@ class Activity
         return $this;
     }
 
-    public function getStartAt(\DateTime $dateTimeBetween): ?\DateTimeInterface
+    public function getStartAt(): ?\DateTimeInterface
     {
         return $this->startAt;
     }

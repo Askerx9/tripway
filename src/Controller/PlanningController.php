@@ -26,4 +26,5 @@ class PlanningController extends AbstractController
   {
     return $this->render('pages/planning/planning.html.twig');
   }
+
 }

@@ -22,7 +22,8 @@ Encore
     .addEntry('app', './assets/js/app.js')
     .addEntry('form', './assets/js/form.js')
     .addEntry('PasswordValidator', './assets/js/PasswordValidator.js')
-    .addEntry('planning', './assets/js/planning.js')
+    .addEntry('planning', './assets/js/elements/planning.js')
+    .addEntry('planning_details', './assets/js/elements/planning_details.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
